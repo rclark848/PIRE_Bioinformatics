@@ -34,10 +34,10 @@ vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.
 \
 Arguments we used:
 
-*  **vcf** ---------------> read in data from a VCF file
-* **exclude-positions** --> specify name of text file with loci to exclude
-* **relatedness2** -------> calculate relatedness
-* **out **----------------> specify name of output file
+*  **--vcf** --------------- read in data from a VCF file
+* **--exclude-positions** -- specify name of text file with loci to exclude
+* **--relatedness2** ------- calculate relatedness
+* **--out**---------------- specify name of output file
 
 let's look at the output:
 
@@ -200,7 +200,7 @@ Isolation-by-distance theory predicts that $F_{ST}/(1-F_{ST})$ should have a lin
 fsts$linfst <- fsts$fst/(1-fsts$fst)
 ```
 \
-Now we can plot lienarized $F_{ST}$s vs. distance, with a best fit line added for good measure:
+Now we can plot linearized $F_{ST}$s vs. distance, with a best fit line added for good measure:
 ```{r, eval=FALSE}
 pdf(width=5, height=5, file="fsts.pdf")
 plot(fsts$geo, fsts$linfst, xlab="Distance (km)", ylab="Linearized FST")
