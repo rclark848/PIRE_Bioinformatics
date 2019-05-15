@@ -12,13 +12,13 @@ Remember there are two kinds of heterozygosity:
 In this lab, we are going to calculate the allele frquences, *H*<sub>*o*</sub> and *H*<sub>*e*</sub> at a particular locus in a sample population. As a quick reminder, the equation for these terms are as follows:
 \
 \
-*__Allele frequencies__* can be calculated as: $(copies of given allele)\(total number of alleles in population)$
+*__Allele frequencies__* can be calculated as: *(copies of given allele)*/*(total number of alleles in population)*
 \
 \
-*__Observed heterozygosity (*H*<sub>*o*</sub>)__* can be calculated as: $\frac{N(Het)}{N}$ where $\frac{N(Het)}{N}$ is the number of individuals that are heterozygous at a given locus and *N* is the total number of individuals in the population.
+*__Observed heterozygosity (*H*<sub>*o*</sub>)__* can be calculated as: *N(Het)*/*N* where *N(Het)* is the number of individuals that are heterozygous at a given locus and *N* is the total number of individuals in the population.
 \
 \
-*__Expected heterozygosity (*H*<sub>*e*</sub>)__* can be calculated as: $2pq$ where *p* is the allele frequency of allele 1 and *q* is the allele frequency of allele 2 (at a biallelic locus).
+*__Expected heterozygosity (*H*<sub>*e*</sub>)__* can be calculated as: *2pq* where *p* is the allele frequency of allele 1 and *q* is the allele frequency of allele 2 (at a biallelic locus).
 
 ***Heterozygosity by hand***
 ----------------------------
@@ -199,7 +199,7 @@ Each line in the file corresponds to an individual. This file has columns in the
 As you can tell, vcftools calculates homozygosity instead of heterozygosity.
 \
 \
-*Calculate the expected $H_{e}$ and observed $H_{o}$ \# of heterozygous loci for individual J19.*
+*Calculate the expected *H*<sub>*e*</sub> and observed *H*<sub>*o*</sub> \# of heterozygous loci for individual J19.*
 \
 (Hint: To calculate *H*<sub>*o*</sub>, simply subtract O(Hom) from the total number of loci included in th analysis. To calculate *H*<sub>*e*</sub>, subtract E(Hom) from the total number of loci.)
 \
