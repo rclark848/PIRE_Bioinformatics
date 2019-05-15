@@ -219,7 +219,7 @@ Exit out of the het\_J.het file when finished.
 vcftools also calculates a metric denoted as *F*<sub>*IS*</sub>, otherwise known as the inbreeding coefficient. This can be thought of as the probability that two alleles at a given locus are identical by descent (inherited from same ancestor). It also represents the mean *reduction* in the *heterozygosity* of an individual due to inbreeding, or non-random mating within a subpopulation. Its value can range from -1 to 1, with 1 indicating a complete reduction in heterozygosity (all individuals are homozygous at a given locus).
 \
 \
-We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individual by hand using the following formula: *F = 1 - *H*<sub>*o*</sub>/*H*<sub>*e*</sub>$
+We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individual by hand using the following formula: *F = 1 - *{H*<sub>*o*</sub>/*H*<sub>*e*</sub>}*
 \
 \
 *What do you think an *F*<sub>*IS*</sub> of 0 indicates?*
