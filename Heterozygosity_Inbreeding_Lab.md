@@ -206,7 +206,7 @@ As you can tell, vcftools calculates homozygosity instead of heterozygosity.
 \
 \
 \
-*How do $H_{o}$ and $H_{o}$ in J19 compare to the values in other individuals in the population?*
+*How do *H*<sub>*e*</sub> and *H*<sub>*o*</sub> in J19 compare to the values in other individuals in the population?*
 \
 \
 \
@@ -219,15 +219,15 @@ Exit out of the het\_J.het file when finished.
 vcftools also calculates a metric denoted as *F*<sub>*IS*</sub>, otherwise known as the inbreeding coefficient. This can be thought of as the probability that two alleles at a given locus are identical by descent (inherited from same ancestor). It also represents the mean *reduction* in the *heterozygosity* of an individual due to inbreeding, or non-random mating within a subpopulation. Its value can range from -1 to 1, with 1 indicating a complete reduction in heterozygosity (all individuals are homozygous at a given locus).
 \
 \
-We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individual by hand using the following formula: $F = 1 - [H_{o}/H_{e}]$
+We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individual by hand using the following formula: *F = 1 - *H*<sub>*o*</sub>/*H*<sub>*e*</sub>$
 \
 \
-*What do you think an $F_{IS}$ of 0 indicates?*
+*What do you think an *F*<sub>*IS*</sub> of 0 indicates?*
 \
 \
 \
 \
-*Using your previously calculated values of $H_{e}$ and $H_{o}$, what is the inbreeding coefficient for individual J19? (Show your work.)*
+*Using your previously calculated values of *H*<sub>*e*</sub> and *H*<sub>*o*</sub>, what is the inbreeding coefficient for individual J19? (Show your work.)*
 \
 \
 \
@@ -237,7 +237,7 @@ We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individua
 \
 \
 \
-*How does $F_{IS}$ for individual J19 compare to the $F_{IS}$ of other individuals in Japan? Is $F_{IS}$ in Japan generally low or high? (Remember, $F_{IS}$ is capped between -1 and 1.)*
+*How does *F*<sub>*IS*</sub> for individual J19 compare to the *F*<sub>*IS*</sub> of other individuals in Japan? Is *F*<sub>*IS*</sub> in Japan generally low or high? (Remember, *F*<sub>*IS*</sub> is capped between -1 and 1.)*
 \
 \
 \
