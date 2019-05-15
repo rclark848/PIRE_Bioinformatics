@@ -54,7 +54,6 @@ The first two columns of the output file give us the individuals being compared 
 \
 \
 \
-\
 
 ***Plot relatedness vs. geographic distance***
 ----------------------------------------------
@@ -84,6 +83,10 @@ tail(dists)
 ```
 
 *How far apart are individuals N6 and N7?*
+\
+\
+\
+\
 Then read in the relatedness values you calculated. Type (all on one line):
 
 ``` r
@@ -111,9 +114,19 @@ dev.off()
 ```
 
 Download the relatedness.pdf file from Turing and open it.
+\
 *How does relatedness vary with geographic distance?*
+\
+\
+\
+\
 *Does this fit an isolation-by-distance pattern? Why or why not?*
-
+\
+\
+\
+\
+\
+\
 ***Plot *F*<sub>*S**T*</sub> vs. geographic distance***
 -------------------------------------------------------
 
@@ -159,7 +172,11 @@ Look at your dataframe to see that it worked. The fsts column should be filled w
 fsts
 ```
 
-*What is the *F*<sub>*S**T*</sub> between Philippines and Indonesia?*
+*What is the *F*<sub>*ST*</sub> between Philippines and Indonesia?*
+\
+\
+\
+\
 We'll calculate geographic distances as the average among all pairwise distances between individuals, first for Japan and Philippines, then J-N and P-N:
 
 ``` r
@@ -175,13 +192,17 @@ fsts
 ```
 
 *What is the average geographic distance between individuals in the Philippines and Indonesia?*
-Isolation-by-distance theory predicts that *F*<sub>*S**T*</sub>/(1 − *F*<sub>*S**T*</sub>) should have a linear relationship with distance (in 1D space) or ln(distance) (in 2D space). Either way, we should transform *F*<sub>*S**T*</sub>:
+\
+\
+\
+\
+Isolation-by-distance theory predicts that *F*<sub>*ST*</sub>/(1 − *F*<sub>*ST*</sub>) should have a linear relationship with distance (in 1D space) or ln(distance) (in 2D space). Either way, we should transform *F*<sub>*ST*</sub>:
 
 ``` r
 fsts$linfst <- fsts$fst/(1-fsts$fst)
 ```
 
-Now we can plot lienarized *F*<sub>*S**T*</sub>s vs. distance, with a best fit line added for good measure:
+Now we can plot lienarized *F*<sub>*ST*</sub>s vs. distance, with a best fit line added for good measure:
 
 ``` r
 pdf(width=5, height=5, file="fsts.pdf")
@@ -192,14 +213,20 @@ dev.off()
 
 Download this plot (fsts.pdf) and look at it.
 *What evidence do you see for or against isolation-by-distance patterns at the population level?*
-Finally, we'll run a statistical test for a relationship between *F*<sub>*S**T*</sub> and geographic distance. Because our pairwise distance measures aren't independent, we can't use a linear regression. Instead, we use a Mantel test, which tests for correlations among matrices.
+\
+\
+\
+\
+\
+\
+Finally, we'll run a statistical test for a relationship between *F*<sub>*ST*</sub> and geographic distance. Because our pairwise distance measures aren't independent, we can't use a linear regression. Instead, we use a Mantel test, which tests for correlations among matrices.
 Back in R on Turing, we'll load a package with a Mantel test and then use it:
 
 ``` r
 require(vegan)
 ```
 
-First, turn our *F*<sub>*S**T*</sub> dataframe into a distance matrix:
+First, turn our *F*<sub>*ST*</sub> dataframe into a distance matrix:
 
 ``` r
 un1 <- unique(unlist(fsts[,1:2]))
@@ -235,6 +262,21 @@ mantel(fstmat, geomat)
 ```
 
 The results are reported to the screen. The Mantel statistic *r* is a measure of correlation from 0 (low) to 1 (high). The p-value is reported as "Significance."
-*How correlated are *F*<sub>*S**T*</sub> and geographic distance? Is this value low or high?*
+\
+*How correlated are *F*<sub>*ST*</sub> and geographic distance? Is this value low or high?*
+\
+\
+\
+\
 *Is the correlation statistically significant?*
+\
+\
+\
+\
 *Please explain how you might change the study design to better fit for isolation-by-distance patterns.*
+\
+\
+\
+\
+\
+\
