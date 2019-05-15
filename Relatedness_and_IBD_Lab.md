@@ -116,7 +116,6 @@ dev.off()
 ```
 
 Download the relatedness.pdf file from Turing and open it.
-\
 
 *How does relatedness vary with geographic distance?*
 \
@@ -129,17 +128,19 @@ Download the relatedness.pdf file from Turing and open it.
 \
 \
 \
+\
+Log back on to Turing when done.
 
 ***Plot *F*<sub>*ST*</sub> vs. geographic distance***
 -------------------------------------------------------
 
-Let's switch back to R on Turing and look at isolation-by-distance from a population perspective using *F*<sub>*S**T*</sub> instead of relatedness values. First, we will create a dataframe to hold the *F*<sub>*S**T*</sub> values we calculated earlier. Type (all on one line):
+Let's switch back to R on Turing and look at isolation-by-distance from a population perspective using *F*<sub>*ST*</sub> instead of relatedness values. First, we will create a dataframe to hold the *F*<sub>*ST*</sub> values we calculated earlier. Type (all on one line):
 
 ``` r
 fsts <- data.frame(POP1=c("J", "J", "P"), POP2=c("P", "N", "N"), fsts=NA, geo=NA)
 ```
 
-Then read in the Japan-Philippines *F*<sub>*S**T*</sub> values that were output vy vcftools in our previous lab and save it to our new dataframe. Type:
+Then read in the Japan-Philippines *F*<sub>*ST*</sub> values that were output vy vcftools in our previous lab and save it to our new dataframe. Type:
 
 ``` r
 infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-P.log")
@@ -215,6 +216,8 @@ dev.off()
 ```
 
 Download this plot (fsts.pdf) and look at it.
+\
+
 *What evidence do you see for or against isolation-by-distance patterns at the population level?*
 \
 \
@@ -266,6 +269,7 @@ mantel(fstmat, geomat)
 
 The results are reported to the screen. The Mantel statistic *r* is a measure of correlation from 0 (low) to 1 (high). The p-value is reported as "Significance."
 \
+
 *How correlated are *F*<sub>*ST*</sub> and geographic distance? Is this value low or high?*
 \
 \
@@ -277,9 +281,3 @@ The results are reported to the screen. The Mantel statistic *r* is a measure of
 \
 \
 *Please explain how you might change the study design to better fit for isolation-by-distance patterns.*
-\
-\
-\
-\
-\
-\
