@@ -54,7 +54,6 @@ The first two columns of the output file give us the individuals being compared 
 \
 \
 \
-
 ***Plot relatedness vs. geographic distance***
 ----------------------------------------------
 
@@ -127,7 +126,8 @@ Download the relatedness.pdf file from Turing and open it.
 \
 \
 \
-***Plot *F*<sub>*S**T*</sub> vs. geographic distance***
+
+***Plot *F*<sub>*ST*</sub> vs. geographic distance***
 -------------------------------------------------------
 
 Let's switch back to R on Turing and look at isolation-by-distance from a population perspective using *F*<sub>*S**T*</sub> instead of relatedness values. First, we will create a dataframe to hold the *F*<sub>*S**T*</sub> values we calculated earlier. Type (all on one line):
