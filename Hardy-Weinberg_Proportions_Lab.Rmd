@@ -37,7 +37,7 @@ Open up the Excel file from the previous lab if you closed it out earlier.
 
 ## *__HWP by hand__*
 \
-Let's go further than judgment and see if we can construct a test for this one locus. Let's divide the samples into three genotypes: the *homozygotes* for allele 1 (the 1,1 individuals), the homozygotes for allele 2 (the 2,2, individuals) and the *heterozygotes* (the 1,2 individuals). Note that our locus has 2 alleles.
+Let's go further than judgment and see if we can construct a test for this one locus. Let's divide the samples into three genotypes: the *homozygotes* for allele 1 (the 1,1 individuals), the homozygotes for allele 2 (the 2,2 individuals) and the *heterozygotes* (the 1,2 individuals). Note that our locus has 2 alleles.
 \
 \
 If we have Hardy-Weinberg proportions, we expect the number of homozygotes from allele 1 and allele 2 to be

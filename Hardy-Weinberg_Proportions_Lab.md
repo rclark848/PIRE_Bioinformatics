@@ -31,7 +31,7 @@ Open up the Excel file from the previous lab if you closed it out earlier.
 ***HWP by hand***
 -----------------
 
-Let's go further than judgment and see if we can construct a test for this one locus. Let's divide the samples into three genotypes: the *homozygotes* for allele 1 (the 1,1 individuals), the homozygotes for allele 2 (the 2,2, individuals) and the *heterozygotes* (the 1,2 individuals). Note that our locus has 2 alleles.
+Let's go further than judgment and see if we can construct a test for this one locus. Let's divide the samples into three genotypes: the *homozygotes* for allele 1 (the 1,1 individuals), the homozygotes for allele 2 (the 2,2 individuals) and the *heterozygotes* (the 1,2 individuals). Note that our locus has 2 alleles.
 \
 \
 If we have Hardy-Weinberg proportions, we expect the number of homozygotes from allele 1 and allele 2 to be
@@ -44,6 +44,10 @@ If we have Hardy-Weinberg proportions, we expect the number of homozygotes from 
 \
 \
 where *N* is the number of individuals and the *p*<sub>*k*</sub>s are the allele frequencies of each allele. Similarly, we expect the number of heterozygotes to be everything else, which we can calculate as
+\
+\
+*E*[*Heterozygotes*]=*N*(1-*sum*[*p*<sub>*k*</sub><sup>2</sup>]).=.8(1.-.*p*<sub>1</sub><sup>2</sup>.-.*p*<sub>2</sub><sup>2</sup>).=.*E*<sub>3</sub>
+
 $$E[Heterozygotes] = N(1-sum[p_k^2]) = 8(1 - p_1^2 - p_2^2) = E_{3}$$
 Calculate the *E*[*Hom*<sub>1</sub>\], *E*[*Hom*<sub>2</sub>\] and *E[Het]* calculations using the allele frquencies you recorded above
 \
