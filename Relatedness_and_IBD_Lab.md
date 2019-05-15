@@ -49,9 +49,11 @@ The first two columns of the output file give us the individuals being compared 
 \
 \
 *Why do you think individuals are related with a value of 0.5 to themselves (e.g. INDV1 = J11 and INDV2 = J11 has a relatedness\_phi of 0.5)?* *Hint: Think about what this relatedness score is really indicating.*
-\
-\
-\
+
+
+
+
+
 
 ***Plot relatedness vs. geographic distance***
 ----------------------------------------------
