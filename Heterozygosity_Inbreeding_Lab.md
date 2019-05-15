@@ -12,7 +12,7 @@ Remember there are two kinds of heterozygosity:
 In this lab, we are going to calculate the allele frquences, *H*<sub>*o*</sub> and *H*<sub>*e*</sub> at a particular locus in a sample population. As a quick reminder, the equation for these terms are as follows:
 \
 \
-*__Allele frequencies__* can be calculated as: $\frac{copies\,of\,given\,allele}{total\,number\,alleles\,in\,population}$
+*__Allele frequencies__* can be calculated as: $(copies of given allele)\(total number of alleles in population)$
 \
 \
 *__Observed heterozygosity (*H*<sub>*o*</sub>)__* can be calculated as: $\frac{N(Het)}{N}$ where $\frac{N(Het)}{N}$ is the number of individuals that are heterozygous at a given locus and *N* is the total number of individuals in the population.
