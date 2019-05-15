@@ -216,7 +216,6 @@ dev.off()
 ```
 
 Download this plot (fsts.pdf) and look at it.
-\
 
 *What evidence do you see for or against isolation-by-distance patterns at the population level?*
 \
@@ -268,7 +267,6 @@ mantel(fstmat, geomat)
 ```
 
 The results are reported to the screen. The Mantel statistic *r* is a measure of correlation from 0 (low) to 1 (high). The p-value is reported as "Significance."
-\
 
 *How correlated are *F*<sub>*ST*</sub> and geographic distance? Is this value low or high?*
 \
