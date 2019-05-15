@@ -19,7 +19,7 @@ vcftools will calculate relatedness for us (specifically, the probability of cho
 
 Log on to Turing. From your sandbox:
 
-```{bash}
+```{bash, eval= FALSE}
 salloc -c 12
 
 enable_lmod
@@ -28,7 +28,7 @@ module load vcftools/0.1
 \
 Type (all on one line):
 
-```{bash}
+```{bash, eval=FALSE}
 vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --exclude-positions /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt --relatedness2 --out clownfish
 ```
 \
@@ -41,7 +41,7 @@ Arguments we used:
 
 let's look at the output:
 
-```{bash}
+```{bash, eval=FALSE}
 less clownfish.relatedness
 ```
 \
@@ -72,22 +72,22 @@ The first two columns of the output file give us the individuals being compared 
 \
 Type
 
-```{bash}
+```{bash, eval=FALSE}
 module load R/3.4 vegan/2.5
 ```
 \
 Open R by typing
-```{bash}
+```{bash, eval=FALSE}
 R
 ```
 \
 We will read in a matrix of geographic distances (in km) between each sample that I calculated earlier. Type:
-```{r}
+```{r, eval=FALSE}
 dists <- read.csv("cm/shared/courses/Bioinfo_Workshop/clownfish_data/dists.csv")
 ```
 \
 To see the last few lines of what you read in type:
-```{r}
+```{r, eval=FALSE}
 tail(dists)
 ```
 \
@@ -97,22 +97,22 @@ tail(dists)
 \
 \
 Then read in the relatedness values you calculated. Type (all on one line):
-```{r}
+```{r, eval=FALSE}
 rels <- read.table("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/clownfish.relatedness", header=TRUE)
 ```
 \
 And look at it:
-```{r}
+```{r, eval=FALSE}
 head(rels)
 ```
 \
 Then we can merge the two datasets together:
-```{r}
+```{r, eval=FALSE}
 dat <- merge(dists, rels, by=c("INDV1", "INDV2"))
 ```
 \
 This allows us to make a plot of relatedness vs. geographic distance:
-```{r}
+```{r, eval=FALSE}
 pdf(width=5, height=5, file="relatedness.pdf")
 plot(dat$geo, dat$RELATEDNESS_PHI, xlab="Distance (km)", ylab="Relatedness")
 dev.off()
@@ -138,38 +138,38 @@ Download the relatedness.pdf file from Turing and open it.
 
 \
 Let's switch back to R on Turing and look at isolation-by-distance from a population perspective using $F_{ST}$ instead of relatedness values. First, we will create a dataframe to hold the $F_{ST}$ values we calculated earlier. Type (all on one line):
-```{r}
+```{r, eval=FALSE}
 fsts <- data.frame(POP1=c("J", "J", "P"), POP2=c("P", "N", "N"), fsts=NA, geo=NA)
 ```
 \
 Then read in the Japan-Philippines $F_{ST}$ values that were output vy vcftools in our previous lab and save it to our new dataframe. Type:
-```{r}
+```{r, eval=FALSE}
 infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-P.log")
 
 fsts&fsts[1] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
 \
 Look at your dataframe to see that it worked. You should see the fsts column begin to fill:
-```{r}
+```{r, eval=FALSE}
 fsts
 ```
 \
 Now repeat for Japan-Indonesia:
-```{r}
+```{r, eval=FALSE}
 infile <- readLines ("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-N.log")
 
 fsts$fsts[2] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
 \
 And for Philippines-Indonesia:
-```{r}
+```{r, eval=FALSE}
 infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_P-N.log")
 
 fsts$fst[3] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
 \
 Look at your dataframe to see that it worked. The fsts column should be filled with values now:
-```{r}
+```{r, eval=FALSE}
 fsts
 ```
 \
@@ -179,14 +179,14 @@ fsts
 \
 \
 We'll calculate geographic distances as the average among all pairwise distances between individuals, first for Japan and Philippines, then J-N and P-N:
-```{r}
+```{r eval=FALSE}
 fsts$geo[1] <- mean(dists$geo[grepl("J", dists$INDV1) & grepl("P", dists$INDV2)])
 fsts$geo[2] <- mean(dists$geo[grepl("J", dists$INDV1) & grepl("N", dists$INDV2)])
 fsts$geo[3] <- mean(dists$geo[grepl("P", dists$INDV1) & grepl("N", dists$INDV2)])
 ```
 \
 Look at your dataframe to see that it worked. The geo column should be filled with values now:
-```{r}
+```{r, eval=FALSE}
 fsts
 ```
 \
@@ -196,12 +196,12 @@ fsts
 \
 \
 Isolation-by-distance theory predicts that $F_{ST}/(1-F_{ST})$ should have a linear relationship with distance (in 1D space) or ln(distance) (in 2D space). Either way, we should transform $F_{ST}$:
-```{r}
+```{r, eval=FALSE}
 fsts$linfst <- fsts$fst/(1-fsts$fst)
 ```
 \
 Now we can plot lienarized $F_{ST}$s vs. distance, with a best fit line added for good measure:
-```{r}
+```{r, eval=FALSE}
 pdf(width=5, height=5, file="fsts.pdf")
 plot(fsts$geo, fsts$linfst, xlab="Distance (km)", ylab="Linearized FST")
 abline(lm(linfst ~ geo, data=fsts))
@@ -221,12 +221,12 @@ Download this plot (fsts.pdf) and look at it.
 Finally, we'll run a statistical test for a relationship between $F_{ST}$ and geographic distance. Because our pairwise distance measures aren't independent, we can't use a linear regression. Instead, we use a Mantel test, which tests for correlations among matrices.
 \
 Back in R on Turing, we'll load a package with a Mantel test and then use it:
-```{r}
+```{r, eval=FALSE}
 require(vegan)
 ```
 \
 First, turn our $F_{ST}$ dataframe into a distance matrix:
-```{r}
+```{r, eval=FALSE}
 un1 <- unique(unlist(fsts[,1:2]))
 fstmat <- matrix(0, nrow=length(un1), ncol=length(un1), dimnames=list(un1, un1))
 fstmat[cbind(match(fsts$POP1, rownames(fstmat)), match(fsts$POP2, colnames(fstmat)))] <- fsts$linfst
@@ -234,24 +234,24 @@ fstmat <- stmat + t(fstmat)
 ```
 \
 Look at it:
-```{r}
+```{r, eval=FALSE}
 fstmat
 ```
 \
 Now, let's do the same for our geographic distances:
-```{r}
+```{r, eval=FALSE}
 geomat <- matrix(0, nrow=length(un1), ncol=length(un1), dimnames=list(un1, un1))
 geomat[cbind(match(fsts$POP1, rownames(geomat)), match(fsts$POP2, colnames(geomat)))] <- fsts$geo
 geomat <- geomat + t(geomat)
 ```
 \
 Look at it:
-```{r}
+```{r, eval=FALSE}
 geomat
 ```
 \
 With our data formatted, we're finally ready to run a Mantel tet:
-```{r}
+```{r, eval=FALSE}
 mantel(fstmat, geomat)
 ```
 \
