@@ -47,8 +47,8 @@ where *N* is the number of individuals and the *p*<sub>*k*</sub>s are the allele
 \
 \
 *E*[*Heterozygotes*]=*N*(1-*sum*[*p*<sub>*k*</sub><sup>2</sup>]) = 8(1 - *p*<sub>1</sub><sup>2</sup> - *p*<sub>2</sub><sup>2</sup>) = *E*<sub>3</sub>
-
-$$E[Heterozygotes] = N(1-sum[p_k^2]) = 8(1 - p_1^2 - p_2^2) = E_{3}$$
+\
+\
 Calculate the *E*[*Hom*<sub>1</sub>\], *E*[*Hom*<sub>2</sub>\] and *E[Het]* calculations using the allele frquencies you recorded above
 \
 \
@@ -74,6 +74,9 @@ The observed numbers of homozygotes and heterozygotes can be found by counting t
 \
 \
 To test whether the observed values (*O*<sub>1</sub>, *O*<sub>2</sub>, and *O*<sub>3</sub>) match the values expected under HWP (*E*<sub>1</sub>, *E*<sub>2</sub>, and *E*<sub>3</sub>), we used a chi-squared (*X*<sup>2</sup>) test. The traditional *X*<sup>2</sup> test takes the form
+*X*<sup>2</sup> = *sum*[(*O*<sub>*j*</sub> - *E*<sub>*j*</sub>)<sup>2</sup>/*E*<sub>*j*</sub>] = (*O*<sub>1</sub> - *E*<sub>1</sub>)<sup>2</sup>/*E*<sub>1</sub> + (*O*<sub>2</sub> - *E*<sub>2</sub>)<sup>2</sup>/*E*<sub>2</sub> + (*O*<sub>3</sub> - *E*<sub>3</sub>)<sup>2</sup>/*E*<sub>3</sub>
+
+
 $$X^2 = sum_{j=1}^{3}(O_{j}-E_{j})^2/E_{j} = (O_{1}-E_{1})^2/E_{1} + (O_{2}-E_{2})^2/E_{2} + (O_{3}-E_{3})^2/E_{3}$$
 Let's calculate that value from the data.
 \
