@@ -1,7 +1,7 @@
 Relatedness and Isolation-by-Distance
 ================
 
-In our last lab, we used *F*<sub>*S**T*</sub> as a measure of genetic differentiation among *populations*. Here, we'll use relatedness as a measure of genetic differentiation among *individuals*. Using individual-based measures are especially useful if your samples don't naturally group into populations and are spread more evenly across the landscape.
+In our last lab, we used *F*<sub>*ST*</sub> as a measure of genetic differentiation among *populations*. Here, we'll use relatedness as a measure of genetic differentiation among *individuals*. Using individual-based measures are especially useful if your samples don't naturally group into populations and are spread more evenly across the landscape.
 
 ***Calculate relatedness***
 ---------------------------
@@ -28,7 +28,7 @@ Arguments we used:
 -   **vcf** ---------------&gt; read in data from a VCF file
 -   **exclude-positions** --&gt; specify name of text file with loci to exclude
 -   **relatedness2** -------&gt; calculate relatedness
--   **out **----------------&gt; specify name of output file
+-   **out** ----------------&gt; specify name of output file
 
 let's look at the output:
 
@@ -37,9 +37,24 @@ less clownfish.relatedness
 ```
 
 The first two columns of the output file give us the individuals being compared (INDV1 and INDV2). The final column (RELATEDNESS\_PHI) estimates relatedness by giving us the probability of choosing identical alleles when randomly sampling one allele from two individuals at a loci that is heterozygous in at least one of the individuals. Here, anything greater than 0.25 indicates a first-degree relationship (siblings or parent-offspring relationship).
+
 *How related is individual J11 to J13?*
+
+
+
+
 *Is individual J11 more or less related to J13 than to P1?*
+
+
+
+
 *Why do you think individuals are related with a value of 0.5 to themselves (e.g. INDV1 = J11 and INDV2 = J11 has a relatedness\_phi of 0.5)?* *Hint: Think about what this relatedness score is really indicating.*
+
+
+
+
+
+
 
 ***Plot relatedness vs. geographic distance***
 ----------------------------------------------
