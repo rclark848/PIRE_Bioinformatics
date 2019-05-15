@@ -37,7 +37,7 @@ less clownfish.relatedness
 ```
 
 The first two columns of the output file give us the individuals being compared (INDV1 and INDV2). The final column (RELATEDNESS\_PHI) estimates relatedness by giving us the probability of choosing identical alleles when randomly sampling one allele from two individuals at a loci that is heterozygous in at least one of the individuals. Here, anything greater than 0.25 indicates a first-degree relationship (siblings or parent-offspring relationship).
-
+\
 *How related is individual J11 to J13?*
 \
 \
@@ -53,7 +53,7 @@ The first two columns of the output file give us the individuals being compared 
 \
 \
 \
-\
+
 ***Plot relatedness vs. geographic distance***
 ----------------------------------------------
 
@@ -114,13 +114,13 @@ dev.off()
 
 Download the relatedness.pdf file from Turing and open it.
 \
+
 *How does relatedness vary with geographic distance?*
 \
 \
 \
 \
 *Does this fit an isolation-by-distance pattern? Why or why not?*
-\
 \
 \
 \
