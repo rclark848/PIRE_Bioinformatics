@@ -1,0 +1,211 @@
+BayeScan
+================
+
+A targeted approach to look for patterns of local seelction is to look for *F*<sub>*ST*</sub> outliers (where *F*<sub>*ST*</sub> is a measure of differentiation among populations). This approach compares the level of differentiation at a given locus to levels of differentiation across the genome (or transcriptome) to determine whether there is evidence of selection. For example, a locus that is significantly more divergent than average may have been affected by divergent, directional selection. Similarly, lower than usual *F*<sub>*ST*</sub> suggests either balancing or purifying selection. To conduct an *F*<sub>*ST*</sub> outlier analysis we will use the program BayeScan, which uses a Bayesian framework to estimate the probability that each locus has been acted on by selection under a demographic model where each population diverged independently from a common ancestor.
+
+***Create input for BayeScan***
+-------------------------------
+
+We'll use a custom Python script to convert our .vcf file to the format that BayeScan expects. In addition to the .vcf file, this script also needs to know which population each individual is in. This information will be read in from a file called popfile.
+Open up PuTTY and log on to your turing account.
+Type
+
+``` bash
+salloc -c 12
+```
+
+Navigate to your sandbox
+
+``` bash
+cd /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox
+```
+
+Then, from your sandbox, run the script. Type (all on one line)
+
+``` bash
+python /cm/shared/courses/Bioinfo_Workshop/clownfish_data/make_bayescan_input.py /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/popfile 0
+```
+
+This script produces three files:
+
+-   **bayes\_input.txt:** the genotype frequencies for each SNP in each population. Primary input for BayeScan.
+-   **low\_freq\_snps.txt:** list of SNPs with minor alleles that are below a cut-off frequency. These can optionally be provided to BayeScan as a list of SNPs to exclude from the analysis because they may be unreliable (not used in this lab).
+-   **snpkey.txt:** a file that matches each SNPs number ID to the contig number and basepair position within that contig (formatted as "CONTIGNAME\_BASEPAIR"). Very useful for interpreting the BayeScan output.
+
+Open the snpkey.txt. file:
+
+``` bash
+less snpkey.txt
+```
+
+*On what contig is SNP \#50 located? What basepair is it?*
+Close out of the snpkey.txt file when finished.
+
+***Run BayeScan***
+------------------
+
+BayeScan uses Markov Chain Monte Carlo (MCMC) methods to sample from the posterior distribution of the model that it fits to the data. To see the arguments that you can specify for the program, type
+
+``` bash
+enable_lmod
+module load bayescan
+
+bayescan --help
+```
+
+*What is the default value for the burn-in?*
+Start BayeScan:
+
+``` bash
+bayescan -threads 3 bayes_input.txt
+```
+
+As it runs, you will see its progress being printed slowly across the bottom of the screen. Instead of waiting for it to finish (a few hours), type
+
+``` bash
+control-C
+```
+
+to end the program (i.e., hold down the Control key while you type "c"). For the rest of today, we'll use a set of files produced ahead of time with the same command.
+
+***Analyze output***
+--------------------
+
+BayeScan produces a number of output files, but the most useful one for our purposes is the bayes\_input\_fst.txt file. Each line in the file corresponds to a SNP. This file has columns in the following order:
+
+-   SNP ID number
+-   Probability of being under selection
+-   The *log*<sub>10</sub> posterior odds that the SNP is under selection (greater than 0.5 is considered "substantial" evidence)
+-   The Q-value, which indicates the fraction of answers with this Q-value or lower that are likely to be false positives (e.g. 5% of SNPs with Q-values under 0.05 are likely to be false positives)
+-   The estimated alpha coefficient indicating the strength and direction of selection. A positive value of alpha suggests diversifying selection, whereas negative values suggest balancing or purifying selection
+-   The *F*<sub>*ST*</sub> coefficient averaged over populations
+
+Now, take a quick look at the file from an earlier run:
+
+``` bash
+less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/bayes_input_fst.txt
+```
+
+*Do you think SNP \#1 is under selection? Why or why not?*
+\
+\
+\
+\
+\
+\
+It's also useful to create a plot of these results, and BayeScan comes with a nice R script to do this. First, from your sandbox, open R:
+
+``` bash
+module load R/3.4
+R
+```
+
+Then, load the plotting script into R:
+
+``` r
+source("/cm/shared/courses/Bioinfo_Workshop/clownfish_data/plot_R.r")
+```
+
+Finally, tell R to make a plot with the plot\_bayescan() command that you just loaded. By adding pdf() before and dev.off() after, you will direct the output to a PDF file falled bayes\_input.pdf.
+
+``` r
+pdf(file="bayes_input.pdf")
+plot_bayescan("/cm/shared/courses/Bioinfo_Workshop/clownfish_data/bayes_input_fst.txt", FDR=0.05)
+dev.off()
+```
+
+Quit from R by typing
+
+``` bash
+q()
+```
+
+Now, use WinSCP to download these two files to your local computer
+
+``` bash
+/cm/shared/courses/Bioinfo_Workshop/clownfish_data/bayes_input_fst.txt
+/cm/shared/courses/Bioinfo_Workshop/sandboxes/yourbox/bayes_input.pdf
+```
+
+Open the bayes\_input.pdf file. Each locus is a dot with its ID number nearby, and *F*<sub>*ST*</sub> is plotted against the *log*<sub>10</sub> Q-value. *log*<sub>10</sub> of 0.05 (5%) is -1.3, and a vertical line is plotted here as a cutoff.
+\
+\
+*What are the ID numbers for two of the SNPs that are candidates for being under selection?*
+\
+\
+\
+\
+Now, open the bayes\_input\_fst.txt file in Excel. You may need to tell Excel to convert text to columns with "space" as a column delimiter so that it displays in a pretty way.
+\
+\
+Select all the data and sort by (increasing) Q-value.
+\
+\
+*How many loci have a Q-value under 0.05? What are their SNP ID numbers?*
+\
+\
+\
+\
+\
+\
+Make a list of all of these SNP ID numbers! You will be referring back to them in a lab this afternoon.
+
+***BLAST***
+-----------
+
+Now, it's time to figure out the identify of these loci. We have just BayeScan locus ID numbers right now, but the snpkey.txt file lets us translate those back into contig names and nucleotide positions.
+\
+\
+Back on the cluster, open the snpkey.txt file.
+
+``` bash
+less /cm/shared/courses/Bioinfo_Workshop/sandboxes/yourbox/snpkey.txt
+```
+
+From within the less program, you can search by typing / and then the search string. Search for the ID of one of the SNPs that may be under selection:
+
+``` bash
+/YOURSNP
+```
+
+where you replace YOURSNP with a SNP number given to you by an instructor.
+\
+\
+less should highlight the text you searched for and bring you to that line. If it picked up text in a contig name or bp position (i.e., not the left-hand column), then search again by typing the letter n (if necessary, you can type the capital letter N to search in the reverse direction).
+\
+\
+*On what contig is this SNP? At what basepair position within the contig?*
+\
+\
+\
+\
+Now, we can open up a transcriptome assembly to look for the nucleotide sequence of this contig:
+
+``` bash
+less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/New_ref_N3.fa
+```
+
+This is a FASTA file.
+\
+\
+Now, use / to search for the contig with your SNP on it.
+\
+\
+To figure out what these nucleotides are, go to the BLAST webpage:
+\
+\
+<http://www.ncbi.nlm.nih.gov/Blast.cgi>
+\
+\
+Select the link for "Nucleotide BLAST" and then copy and paste the sequence into the box at the top of the BLAST webpage. Make sure that "Database" is set to "Others" and that "Optimize for" is set to "Somewhat similar sequences (blastn)."
+\
+\
+BLAST searches GenBank for sequences similar to the one you input. It may take a minute. The output includes a table of close sequence matches in GenBank, listed with the best match at the top. Lower E-values and a higher percent identity are better.
+\
+\
+*Based on the set of close matches, what does your gene appear to be?*
+\
+\
+\
+\
+Finally! If there is time, enter what you found at \_\_\_\_\_\_\_\_\_\_\_\_\_\_.
