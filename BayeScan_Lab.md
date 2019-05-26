@@ -58,6 +58,10 @@ bayescan --help
 ```
 
 *What is the default value for the burn-in?*
+\
+\
+\
+\
 Start BayeScan:
 
 ``` bash
