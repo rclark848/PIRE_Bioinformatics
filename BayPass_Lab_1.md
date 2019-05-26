@@ -111,7 +111,7 @@ When you are done looking at the script, close out of it. Run PGDSpider by typin
 sbatch PGDSpider_Script.sbatch
 ```
 
-The program should only take ~1 minute to run. Type ls -ltrh to check and see that it is running properly. If it worked, you should see an output file titled output\_BayPass.snps appear.
+The program should only take ~1 minute to run. Type ls -ltrh to check and see that it's running properly. If it worked, you should see an output file titled output\_BayPass.snps appear.
 \
 \
 Arguments we used:
