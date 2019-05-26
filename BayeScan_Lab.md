@@ -39,6 +39,10 @@ less snpkey.txt
 ```
 
 *On what contig is SNP \#50 located? What basepair is it?*
+\
+\
+\
+\
 Close out of the snpkey.txt file when finished.
 
 ***Run BayeScan***

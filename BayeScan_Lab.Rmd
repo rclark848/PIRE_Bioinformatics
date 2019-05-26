@@ -92,7 +92,7 @@ BayeScan produces a number of output files, but the most useful one for our purp
 * The $F_{ST}$ coefficient averaged over populations
 \
 
-Now, take a quick look at the file from an earlier run:
+Now, take a look at the file from an earlier run:
 ```{bash, eval=FALSE}
 less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/bayes_input_fst.txt
 ```
