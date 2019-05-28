@@ -44,9 +44,9 @@ This file is organized in columns:
 -   **POS1:** The position of the first locus
 -   **POS2:** The position of the second locus
 -   **N\_INDIV:** The number of individuals for which genotypes were available at these loci
--   **R^2:** The squared correlation coefficient between genotypes (-nan means a calculation was not possible)
+-   **R^2:** The squared correlation coefficient between genotypes (`-nan` means a calculation was not possible)
 
-Remember that you can search within less by typing / and the search string. Since a period (.) usually means any character, you can put a  before a period to force less to look for an actual period, as in
+Remember that you can search within less by typing `/` and the search string. Since a period (.) usually means any character, you can put a `\` before a period to force less to look for an actual period, as in
 
 ``` bash
 /0\.5
@@ -63,7 +63,7 @@ n
 \
 \
 \
-You can put together another reasonably complex search to look for a tab () followed by a one (1), followed by an end of line character ($). This works because *r*<sup>2</sup> is at the right-hand side of each line:
+You can put together another reasonably complex search to look for a tab (\t) followed by a one (1), followed by an end of line character ($). This works because *r*<sup>2</sup> is at the right-hand side of each line:
 
 ``` bash
 /\t1$
@@ -119,7 +119,7 @@ We can then calculate the *log*<sub>10</sub> distance between each pair of sites
 dat[,logdist:=log10(abs(POS2-POS1))]
 ```
 
-We want to calculate average LD for all pairs of loci with similar distance apart. Here, we'll round distance down to the nearest multiple of 0.25 *log*<sub>10</sub> basepairs apart:
+We want to calculate average LD for all pairs of loci with a similar distance apart. Here, we'll round distance down to the nearest multiple of 0.25 *log*<sub>10</sub> basepairs apart:
 
 ``` r
 dat[,distclass:=floor(logdist/0.25)*0.25+0.25/2]
@@ -131,13 +131,13 @@ We can then easily calculate average *r*<sup>2</sup> within each distance class:
 bins <- dat[!is.na(r2),.(r2ave=mean(r2)), by=distclass]
 ```
 
-Now sort by distance calss:
+Now sort by distance class:
 
 ``` r
 setkey(bins, distclass)
 ```
 
-And make a plot of average *r*<sup>2</sup> vs. *log*<sub>10</sub> distance! We will write the plot straight to a PDF file on Midas. The pdf() command starts the plot, and the dev.off() command ends writing to the plot.
+And make a plot of average *r*<sup>2</sup> vs. *log*<sub>10</sub> distance! We will write the plot straight to a PDF file on Midas. The `pdf()` command starts the plot, and the `dev.off()` command ends writing to the plot.
 
 ``` r
 pdf(width=4, height=4, file="ld_decay.pdf")

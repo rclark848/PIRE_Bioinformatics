@@ -48,9 +48,9 @@ This file is organized in columns:
 * **POS1:** The position of the first locus
 * **POS2:** The position of the second locus
 * **N_INDIV:** The number of individuals for which genotypes were available at these loci
-* **R^2:** The squared correlation coefficient between genotypes (-nan means a calculation was not possible)
+* **R^2:** The squared correlation coefficient between genotypes (`-nan` means a calculation was not possible)
 
-Remember that you can search within less by typing / and the search string. Since a period (.) usually means any character, you can put a \ before a period to force less to look for an actual period, as in
+Remember that you can search within less by typing `/` and the search string. Since a period (.) usually means any character, you can put a `\` before a period to force less to look for an actual period, as in
 ```{bash, eval=FALSE}
 /0\.5
 ```
@@ -113,7 +113,7 @@ We can then calculate the $log_{10}$ distance between each pair of sites:
 dat[,logdist:=log10(abs(POS2-POS1))]
 ```
 \
-We want to calculate average LD for all pairs of loci with similar distance apart. Here, we'll round distance down to the nearest multiple of 0.25 $log_{10}$ basepairs apart:
+We want to calculate average LD for all pairs of loci with a similar distance apart. Here, we'll round distance down to the nearest multiple of 0.25 $log_{10}$ basepairs apart:
 ```{r, eval=FALSE}
 dat[,distclass:=floor(logdist/0.25)*0.25+0.25/2]
 ```
@@ -123,12 +123,12 @@ We can then easily calculate average $r^2$ within each distance class:
 bins <- dat[!is.na(r2),.(r2ave=mean(r2)), by=distclass]
 ```
 \
-Now sort by distance calss:
+Now sort by distance class:
 ```{r, eval=FALSE}
 setkey(bins, distclass)
 ```
 \
-And make a plot of average $r^2$ vs. $log_{10}$ distance! We will write the plot straight to a PDF file on Midas. The pdf() command starts the plot, and the dev.off() command ends writing to the plot.
+And make a plot of average $r^2$ vs. $log_{10}$ distance! We will write the plot straight to a PDF file on Midas. The `pdf()` command starts the plot, and the `dev.off()` command ends writing to the plot.
 ```{r, eval=FALSE}
 pdf(width=4, height=4, file="ld_decay.pdf")
 bins[,plot(distclass, r2ave, type="1", xlab="Distance (log10 bp)", ylab="Average correlation (r2)", main="LD decay", xlim=c(0,3))]
