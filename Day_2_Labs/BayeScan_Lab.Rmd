@@ -196,7 +196,7 @@ Now, use / to search for the contig with your SNP on it.
 To figure out what these nucleotides are, go to the BLAST webpage:
 \
 \
-http://www.ncbi.nlm.nih.gov/Blast.cgi
+<http://www.ncbi.nlm.nih.gov/Blast.cgi>
 \
 \
 Select the link for "Nucleotide BLAST" and then copy and paste the sequence into the box at the top of the BLAST webpage. Make sure that "Database" is set to "Others" and that "Optimize for" is set to "Somewhat similar sequences (blastn)."

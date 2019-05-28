@@ -23,7 +23,7 @@ In this lab, we are going to calculate the allele frquences, *H*<sub>*o*</sub> a
 ***Heterozygosity by hand***
 ----------------------------
 
-Open up the folder titled Clownfish on your Desktop. Then, open up the Excel file titled Genotypes.xlsx.
+Open up the folder titled Clownfish on your Desktop. Then, open up the Excel file titled `Genotypes.xlsx`.
 \
 \
 The first line of the data file shows you four things, each in a cell: 1) the number of loci, 2) the number of individuals, 3) the number of populations, and 4) the number of individuals in the first population. Enter this below:
