@@ -16,7 +16,7 @@ Remember there are two kinds of heterozygosity:
 $H_{e}$ = $H_{o}$ if a population meets Hardy-Weinberg Proportions (HWP).
 \
 \
-In this lab, we are going to calculate the allele frquences, $H_{o}$ and $H_{e}$ at a particular locus in a sample population. As a quick reminder, the equation for these terms are as follows:
+In this lab, we are going to calculate the allele frquencies, $H_{o}$ and $H_{e}$ at a particular locus in a sample population. As a quick reminder, the equation for these terms are as follows:
 \
 \
 ___Allele frequencies___ can be calculated as: $\frac{copies\,of\,given\,allele}{total\,number\,alleles\,in\,population}$
@@ -29,7 +29,7 @@ ___Expected heterozygosity ($H_{e}$)___ can be calculated as: $2pq$ where $p$ is
 
 ## *__Heterozygosity by hand__*
 \
-Open up the folder titled Clownfish on your Desktop. Then, open up the Excel file titled `Genotypes.xlsx`.
+Navigate to <https://github.com/rclark848/PIRE_Bioinformatics>. This is a repository that contains .md (markdown) and .Rmd (R markdown) copies of all the labs we will be doing over the next three days. It is also home to any data, scripts, or input files you will need for the upcoming analyses. Open up the directory titled `Day_1_Labs` and then download the Excel file titled `Genotypes.xlsx`. (Click on `Genotypes.xlsx` and then click `Download`.)
 \
 The first line of the data file shows you four things, each in a cell: 1) the number of loci, 2) the number of individuals, 3) the number of populations, and 4) the number of individuals in the first population. Enter this below:
 \
