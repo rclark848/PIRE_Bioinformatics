@@ -11,9 +11,13 @@ Remember there are two kinds of heterozygosity:
 \
 \
 In this lab, we are going to calculate the allele frquencies, *H*<sub>*o*</sub> and *H*<sub>*e*</sub> at a particular locus in a sample population. As a quick reminder, the equation for these terms are as follows:
+\
+\
 ***Allele frequencies*** can be calculated as: *(copies of given alleles)/(total number alleles in population)*
 \
+\
 *__Observed heterozygosity (*H*<sub>*o*</sub>)__* can be calculated as: *N(Het)/N* where *N*(*Het*) is the number of individuals that are heterozygous at a given locus and *N* is the total number of individuals in the population.
+\
 \
 *__Expected heterozygosity (*H*<sub>*e*</sub>)__* can be calculated as: 2*pq* where *p* is the allele frequency of allele 1 and *q* is the allele frequency of allele 2 (at a biallelic locus).
 
@@ -123,7 +127,7 @@ To skip the header and get to the data part of the file, search for the word `CH
 and hitting return. `CHROM` is useful because it's a word in the header of the data section.
 \
 \
-The header line starts with `\#CHROM` and has the following columns:
+The header line starts with `#CHROM` and has the following columns:
 
 -   **CHROM** ------------ the name of the "chromosome" or contig in our case
 -   **POS** -------------- the basepair position of the SNP on the contig
@@ -170,7 +174,7 @@ J17
 J19
 ```
 
-To exit nano, look at the bottom of the screen. You will see that it says ^X for Exit. This means `Control X`. Type that, then follow the instructions to save the file as `J\_individuals.txt`.
+To exit nano, look at the bottom of the screen. You will see that it says ^X for Exit. This means `Control X`. Type that, then follow the instructions to save the file as `J_individuals.txt`.
 \
 \
 To calculate heterozygosity using vcftools, we need to load the program first. Type the following (all on one line):
@@ -192,7 +196,7 @@ Arguments we used:
 -   **--keep** -- specify name of text file with individuals to include
 -   **--out** --- specify name of output file
 
-Open the `het\_J.het` ouput file by typing
+Open the `het_J.het` ouput file by typing
 
 ``` bash
 less het_J.het
@@ -221,7 +225,7 @@ As you can tell, vcftools calculates homozygosity instead of heterozygosity.
 \
 \
 \
-Exit out of the `het\_J.het` file when finished.
+Exit out of the `het_J.het` file when finished.
 
 ***Understanding the inbreeding coefficient***
 ----------------------------------------------
@@ -244,7 +248,7 @@ We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individua
 \
 \
 \
-*Now look at the `het\_J.het` file. Does your value match the results from vcftools? Why or why not?*
+*Now look at the `het_J.het` file. Does your value match the results from vcftools? Why or why not?*
 \
 \
 \
