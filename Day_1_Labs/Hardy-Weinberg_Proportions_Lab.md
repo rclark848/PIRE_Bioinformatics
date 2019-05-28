@@ -124,7 +124,7 @@ We can then create these files using nano. Create a new text file by typing
 nano N_individuals.txt
 ```
 
-Enter the following information (make sure to put each individual ID on a separate line, just like you did when creating the J\_individuals.txt file from the last lab).
+Enter the following information (make sure to put each individual ID on a separate line, just like you did when creating the `J_individuals.txt` file from the last lab).
 
 ``` bash
 N1
@@ -183,7 +183,7 @@ vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.
 vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --hardy --keep N_individuals.txt --out hardy_N
 ```
 
-Open the hardy\_J.hwe output file. Each line in the file corresponds to a locus. This file has columns in the following order:
+Open the `hardy_J.hwe` output file. Each line in the file corresponds to a locus. This file has columns in the following order:
 
 -   Chromosome ID
 -   SNP bp position
@@ -232,12 +232,12 @@ This is a text file constructed from the HWP p-values for all 3 populations at e
 \
 \
 \
-Go ahead and close out of the HWE\_all.txt file when you are done.
+Go ahead and close out of the `HWE_all.txt` file when you are done.
 
 ***Data analysis***
 -------------------
 
-Use WinSCP on your Desktop to download the HWE\_all.txt file to your local computer (saving it to the desktop or under my documents is fine). Open Excel and then import the file by going to Data -&gt; From Text/CSV and then selecting the file for import.
+Use WinSCP on your Desktop to download the `HWE_all.txt` file to your local computer (saving it to the desktop or under my documents is fine). Open Excel and then import the file by going to `Data -> From Text/CSV` and then selecting the file for import.
 \
 \
 Explore these data to see what you can learn. Try sorting these data in different ways, and create scatter plots (or other figures) if you feel they might be of use.
