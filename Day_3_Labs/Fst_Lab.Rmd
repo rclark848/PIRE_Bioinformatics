@@ -79,7 +79,7 @@ Open up the FST_J-P.weir.fst output file. Each line in the file corresponds to a
 
 * Chromosome ID
 * SNP bp position
-* Weir and Cockerham $F_{ST}$ estimate (a commonly used estimator for $F_{ST}$
+* Weir and Cockerham $F_{ST}$ estimate (a commonly used estimator for $F_{ST}$)
 
 Search for chromosome TRINITY_DN39030_c1_g1_i1, SNP position 686.
 \

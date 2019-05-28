@@ -7,7 +7,7 @@ In this lab, we are going to investigate *F*<sub>*ST*</sub> values. *F*<sub>*ST*
 *F*<sub>*ST*</sub> values range from 0 to 1. A value of 0 indicates that there is no differentiation among subpopulations (all subpopulations have the same allele frequencies). A value of 1 indicates complete differentiation among subpopulations (all subpopulations are fixed for different alleles).
 \
 \
-We have looked at *F*<sub>*ST*</sub> values before when we ran BayeScan and identified *F*<sub>*ST*</sub> outliers, or loci that diverge more than "expected" due to selection. Selection is not the only evolutionary process that can affect *F*<sub>*S**T*</sub> values, however. Gene flow can also impact *F*<sub>*ST*</sub> values, as it tends to decrease the amount of differentiation between subpopulations.
+We have looked at *F*<sub>*ST*</sub> values before when we ran BayeScan and identified *F*<sub>*ST*</sub> outliers, or loci that diverge more than "expected" due to selection. Selection is not the only evolutionary process that can affect *F*<sub>*ST*</sub> values, however. Gene flow can also impact *F*<sub>*ST*</sub> values, as it tends to decrease the amount of differentiation between subpopulations.
 \
 \
 *Would gene flow increase or decrease *F*<sub>*ST*</sub> values? Why?*
@@ -79,7 +79,7 @@ Open up the FST\_J-P.weir.fst output file. Each line in the file corresponds to 
 
 -   Chromosome ID
 -   SNP bp position
--   Weir and Cockerham *F*<sub>*ST*</sub> estimate (a commonly used estimator for *F*<sub>*ST*</sub>
+-   Weir and Cockerham *F*<sub>*ST*</sub> estimate (a commonly used estimator for *F*<sub>*ST*</sub>)
 
 Search for chromosome TRINITY\_DN39030\_c1\_g1\_i1, SNP position 686.
 \
@@ -131,7 +131,7 @@ Close out of any file you may have open.
 
 We know that gene flow impacts *F*<sub>*ST*</sub>*s* values. Thus, one might be tempted to use *F*<sub>*ST*</sub>*s* to estimate migration rates between populations. One way to do so uses the island model formula:
 
-*F*<sub>*ST*</sub> = 1/(4*N**m* + 1)
+*F*<sub>*ST*</sub> = 1/(4*Nm* + 1)
 
 In this formula, *N* represents the population size and *m* represents the migration rate between populations (as a proportion). The island model assumes that all populations are of equal size and migration rates are the same for all populations as well. Often, these terms are combined together, as we are generally interested in the number of migrant individuals among populations (*Nm*).
 \
