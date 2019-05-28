@@ -109,10 +109,10 @@ Open up PuTTY and log on to your Turing account. Type
 salloc -c 12
 ```
 
-We only want to calculate HWP within each population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude for each population, just like in the previous lab. We alraedy have a file for Japan (J), but for now we need files for Indonesia (N) and Philippines (P).
+We only want to calculate HWP within each population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude for each population, just like in the previous lab. We already have a file for Japan (J), but for now we need files for Indonesia (N) and Philippines (P).
 \
 \
-To get ready, navigate to your andbox if you're not already there
+To get ready, navigate to your sandbox if you're not already there
 
 ``` bash
 cd /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/
@@ -165,7 +165,7 @@ To calculate HWP using vcftools, type the following
 ``` bash
 module load vcftools/0.1
 
-vcftools --vcf /cm/shared/coureses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --hardy --keep J_individuals.txt --out hardy_J
+vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --hardy --keep J_individuals.txt --out hardy_J
 ```
 
 Arguments we used:
