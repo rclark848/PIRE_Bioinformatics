@@ -229,7 +229,7 @@ Switch back to Turing when you are done.
 ***Optional: Run PCA with all loci (neutral and non-neutral) included***
 ------------------------------------------------------------------------
 
-If you have time, repeat the PCA analysis, but use /cm/shared/courses/Bioinfo\_Workshop/clownfish\_data/output.hicov2.snps.only.vcf as yoru input file to plink.
+If you have time, repeat the PCA analysis, but use /cm/shared/courses/Bioinfo\_Workshop/clownfish\_data/output.hicov2.snps.only.vcf as your input file to plink.
 \
 \
 Type (all on the same line)
