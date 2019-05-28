@@ -175,7 +175,7 @@ Arguments we used:
 -   **--keep** ------- name of the text file with individuals to include in analysis
 -   **--out** -------- name of the output file
 
-We will need to calculate HWP for the other two populatiosn as well, so we will run vcftools two more times. Type (each on one line)
+We will need to calculate HWP for the other two populations as well, so we will run vcftools two more times. Type (each on one line)
 
 ``` bash
 vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --hardy --keep P_individuals.txt --out hardy_P
@@ -187,8 +187,8 @@ Open the `hardy_J.hwe` output file. Each line in the file corresponds to a locus
 
 -   Chromosome ID
 -   SNP bp position
--   number of observed homozygotes and heterozygotes at the given locus
--   number of expected homozygotes and heterozygotes at the given locus
+-   Number of observed homozygotes and heterozygotes at the given locus
+-   Number of expected homozygotes and heterozygotes at the given locus
 -   *X*<sup>2</sup>-value
 -   p-value for HWP test (null hypothesis is that the population is in HWP at given locus)
 -   p-value for heterozygosity deficit
@@ -227,7 +227,7 @@ less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/HWE_all.txt
 This is a text file constructed from the HWP p-values for all 3 populations at every locus. Search for chromosome TRINITY\_DN36934\_c0\_g2\_i2, SNP position 221.
 \
 \
-*What are the p-values for chromosome TRINITY\_DN36934\_c0\_g1\_i1 SNP position 221 for each population? Are any of the populations out of HWP at this locus?*
+*What are the p-values for chromosome TRINITY\_DN36934\_c0\_g2\_i2, SNP position 221 for each population? Are any of the populations out of HWP at this locus?*
 \
 \
 \
@@ -248,4 +248,4 @@ Explore these data to see what you can learn. Try sorting these data in differen
 \
 \
 \
-*Do any populations appear to have more loci out of HWP than the other two? If so, which one? What processes could be operating to cause one population to have more loci out of HWP than the other populations?*
+*Does any population appear to have more loci out of HWP than the other two? If so, which one? What processes could be operating to cause one population to have more loci out of HWP than the other populations?*
