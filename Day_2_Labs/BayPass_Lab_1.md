@@ -170,7 +170,7 @@ Each column in the file corresponds to a population (Japan, Philippines, Indones
 -   Sea Surface Temperature (Maximum) (C)
 -   Latitude (degrees)
 
-*Which population has the lowest SSS Mean? What is the value?*
+*Which population has the highest SST Mean? What is the value?*
 \
 \
 \
@@ -192,7 +192,7 @@ baypass -help
 \
 \
 \
-BayPass gives you the ability to runn several different models. We are going to run the auxiliary model This model requires a covariance matrix of allele frequencies. It also requires that the environmental variables have been standardized. Both of these files have been created for you. To run BayPass type (all on one line)
+BayPass gives you the ability to run several different models. We are going to run the auxiliary model. This model requires a covariance matrix of allele frequencies. It also requires that the environmental variables have been standardized. Both of these files have been created for you. To run BayPass type (all on one line)
 
 ``` bash
 baypass -npop 3 -efile /cm/shared/courses/Bioinfo_Workshop/clownfish_data/clownfish_data_scaled.env -gfile /cm/shared/courses/Bioinfo_Workshop/clownfish_data/clownfish_allele_counts.geno -auxmodel -omegafile /cm/shared/courses/Bioinfo_Workshop/clownfish_data/clownfish_mat.cov -burnin 50000 -outprefix BayPass_aux_output
@@ -201,11 +201,11 @@ baypass -npop 3 -efile /cm/shared/courses/Bioinfo_Workshop/clownfish_data/clownf
 Arguments we used:
 
 -   **-npop** ---------- number of populations in analysis
--   **-efile** --------- specify name of the file with the (standardized) environmental variable
+-   **-efile** --------- specify name of the file with the (standardized) environmental variables
 -   **-gfile** --------- specify name of the file with the allele counts per population/loci
 -   **-auxmodel** ------ specify the desired model
 -   **-omegafile** ----- specify name of the file with the covariance matrix
 -   **-burnins** ------- number of burn-in iterations for the MCMC
 -   **-outprefix** ----- specify prefix for the output files
 
-As the program runs, you will see its progress being printed to the screen. BayPass will take ~30 minutes to rn. We will come back to this after the break to check our results.
+As the program runs, you will see its progress being printed to the screen. BayPass will take ~30 minutes to run. We will come back to this after the break to check our results.
