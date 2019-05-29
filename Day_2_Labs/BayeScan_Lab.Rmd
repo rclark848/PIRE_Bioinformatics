@@ -35,12 +35,12 @@ python /cm/shared/courses/Bioinfo_Workshop/clownfish_data/make_bayescan_input.py
 \
 This script produces three files:
 
-* **bayes_input.txt:** the genotype frequencies for each SNP in each population. Primary input for BayeScan.
-* **low_freq_snps.txt:** list of SNPs with minor alleles that are below a cut-off frequency. These can optionally be provided to BayeScan as a list of SNPs to exclude from the analysis because they may be unreliable (not used in this lab).
-* **snpkey.txt:** a file that matches each SNPs number ID to the contig number and basepair position within that contig (formatted as "CONTIGNAME_BASEPAIR"). Very useful for interpreting the BayeScan output.
+* **`bayes_input.txt`:** the genotype frequencies for each SNP in each population. Primary input for BayeScan.
+* **`low_freq_snps.txt`:** list of SNPs with minor alleles that are below a cut-off frequency. These can optionally be provided to BayeScan as a list of SNPs to exclude from the analysis because they may be unreliable (not used in this lab).
+* **`snpkey.txt`:** a file that matches each SNPs number ID to the contig number and basepair position within that contig (formatted as `CONTIGNAME_BASEPAIR`). Very useful for interpreting the BayeScan output.
 \
 
-Open the snpkey.txt. file:
+Open the `snpkey.txt`. file:
 ```{bash, eval=FALSE}
 less snpkey.txt
 ```
@@ -51,7 +51,7 @@ less snpkey.txt
 \
 \
 
-Close out of the snpkey.txt file when finished.
+Close out of the `snpkey.txt` file when finished.
 
 ## *__Run BayeScan__*
 \
@@ -82,7 +82,7 @@ to end the program (i.e., hold down the Control key while you type "c"). For the
 
 ## *__Analyze output__*
 \
-BayeScan produces a number of output files, but the most useful one for our purposes is the bayes_input_fst.txt file. Each line in the file corresponds to a SNP. This file has columns in the following order:
+BayeScan produces a number of output files, but the most useful one for our purposes is the `bayes_input_fst.txt` file. Each line in the file corresponds to a SNP. This file has columns in the following order:
 
 * SNP ID number
 * Probability of being under selection
@@ -115,7 +115,7 @@ Then, load the plotting script into R:
 source("/cm/shared/courses/Bioinfo_Workshop/clownfish_data/plot_R.r")
 ```
 \
-Finally, tell R to make a plot with the plot_bayescan() command that you just loaded. By adding pdf() before and dev.off() after, you will direct the output to a PDF file falled bayes_input.pdf.
+Finally, tell R to make a plot with the `plot_bayescan()` command that you just loaded. By adding `pdf()` before and `dev.off()` after, you will direct the output to a PDF file called `bayes_input.pdf`.
 ```{r, eval=FALSE}
 pdf(file="bayes_input.pdf")
 plot_bayescan("/cm/shared/courses/Bioinfo_Workshop/clownfish_data/bayes_input_fst.txt", FDR=0.05)
@@ -133,7 +133,7 @@ Now, use WinSCP to download these two files to your local computer
 /cm/shared/courses/Bioinfo_Workshop/sandboxes/yourbox/bayes_input.pdf
 ```
 \
-Open the bayes_input.pdf file. Each locus is a dot with its ID number nearby, and $F_{ST}$ is plotted against the $log_{10}$ Q-value. $log_{10}$ of 0.05 (5%) is -1.3, and a vertical line is plotted here as a cutoff.
+Open the `bayes_input.pdf` file. Each locus is a dot with its ID number nearby, and $F_{ST}$ is plotted against the $log_{10}$ Q-value. $log_{10}$ of 0.05 (5%) is -1.3, and a vertical line is plotted here as a cutoff.
 \
 \
 *What are the ID numbers for two of the SNPs that are candidates for being under selection?*
@@ -141,7 +141,7 @@ Open the bayes_input.pdf file. Each locus is a dot with its ID number nearby, an
 \
 \
 \
-Now, open the bayes_input_fst.txt file in Excel. You may need to tell Excel to convert text to columns with "space" as a column delimiter so that it displays in a pretty way.
+Now, open the `bayes_input_fst.txt` file in Excel. You may need to tell Excel to convert text to columns with "space" as a column delimiter so that it displays in a pretty way.
 \
 \
 Select all the data and sort by (increasing) Q-value.
@@ -158,15 +158,15 @@ Make a list of all of these SNP ID numbers! You will be referring back to them i
 
 ## *__BLAST__*
 \
-Now, it's time to figure out the identify of these loci. We have just BayeScan locus ID numbers right now, but the snpkey.txt file lets us translate those back into contig names and nucleotide positions.
+Now, it's time to figure out the identify of these loci. We have just BayeScan locus ID numbers right now, but the `snpkey.txt` file lets us translate those back into contig names and nucleotide positions.
 \
 \
-Back on the cluster, open the snpkey.txt file.
+Back on the cluster, open the `snpkey.txt` file.
 ```{bash, eval=FALSE}
 less /cm/shared/courses/Bioinfo_Workshop/sandboxes/yourbox/snpkey.txt
 ```
 '\
-From within the less program, you can search by typing / and then the search string. Search for the ID of one of the SNPs that may be under selection:
+From within the less program, you can search by typing `/` and then the search string. Search for the ID of one of the SNPs that may be under selection:
 ```{bash, eval=FALSE}
 /YOURSNP
 ```
@@ -174,7 +174,7 @@ From within the less program, you can search by typing / and then the search str
 where you replace YOURSNP with a SNP number given to you by an instructor.
 \
 \
-less should highlight the text you searched for and bring you to that line. If it picked up text in a contig name or bp position (i.e., not the left-hand column), then search again by typing the letter n (if necessary, you can type the capital letter N to search in the reverse direction).
+less should highlight the text you searched for and bring you to that line. If it picked up text in a contig name or bp position (i.e., not the left-hand column), then search again by typing the letter `n` (if necessary, you can type the capital letter `N` to search in the reverse direction).
 \
 \
 *On what contig is this SNP? At what basepair position within the contig?*
@@ -190,7 +190,7 @@ less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/New_ref_N3.fa
 This is a FASTA file.
 \
 \
-Now, use / to search for the contig with your SNP on it.
+Now, use `/` to search for the contig with your SNP on it.
 \
 \
 To figure out what these nucleotides are, go to the BLAST webpage:
@@ -199,7 +199,7 @@ To figure out what these nucleotides are, go to the BLAST webpage:
 <http://www.ncbi.nlm.nih.gov/Blast.cgi>
 \
 \
-Select the link for "Nucleotide BLAST" and then copy and paste the sequence into the box at the top of the BLAST webpage. Make sure that "Database" is set to "Others" and that "Optimize for" is set to "Somewhat similar sequences (blastn)."
+Select the link for `Nucleotide BLAST` and then copy and paste the sequence into the box at the top of the BLAST webpage. Make sure that `Database` is set to `Others` and that `Optimize for` is set to `Somewhat similar sequences (blastn)`.
 \
 \
 BLAST searches GenBank for sequences similar to the one you input. It may take a minute. The output includes a table of close sequence matches in GenBank, listed with the best match at the top. Lower E-values and a higher percent identity are better.
@@ -210,4 +210,4 @@ BLAST searches GenBank for sequences similar to the one you input. It may take a
 \
 \
 \
-Finally! If there is time, enter what you found at ______________.
+Finally! If there is time, enter what you found [here](https://docs.google.com/spreadsheets/d/1m_SXfXW1yd0vbIv0ZaNDHjj7UJoPELc6cXFfGjSqnmE/edit?usp=sharing).
