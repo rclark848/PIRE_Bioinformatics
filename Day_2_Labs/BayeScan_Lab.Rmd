@@ -8,7 +8,7 @@ output:
 ---
 
 \
-A targeted approach to look for patterns of local seelction is to look for $F_{ST}$ outliers (where $F_{ST}$ is a measure of differentiation among populations). This approach compares the level of differentiation at a given locus to levels of differentiation across the genome (or transcriptome) to determine whether there is evidence of selection. For example, a locus that is significantly more divergent than average may have been affected by divergent, directional selection. Similarly, lower than usual $F_{ST}$ suggests either balancing or purifying selection. To conduct an $F_{ST}$ outlier analysis we will use the program BayeScan, which uses a Bayesian framework to estimate the probability that each locus has been acted on by selection under a demographic model where each population diverged independently from a common ancestor.
+A targeted approach to look for patterns of local selection is to look for $F_{ST}$ outliers (where $F_{ST}$ is a measure of differentiation among populations). This approach compares the level of differentiation at a given locus to levels of differentiation across the genome (or transcriptome) to determine whether there is evidence of selection. For example, a locus that is significantly more divergent than average may have been affected by divergent, directional selection. Similarly, lower than usual $F_{ST}$ suggests either balancing or purifying selection. To conduct an $F_{ST}$ outlier analysis we will use the program BayeScan, which uses a Bayesian framework to estimate the probability that each locus has been acted on by selection under a demographic model where each population diverged independently from a common ancestor.
 
 ## *__Create input for BayeScan__*
 \
@@ -40,7 +40,7 @@ This script produces three files:
 * **`snpkey.txt`:** a file that matches each SNPs number ID to the contig number and basepair position within that contig (formatted as `CONTIGNAME_BASEPAIR`). Very useful for interpreting the BayeScan output.
 \
 
-Open the `snpkey.txt`. file:
+Open the `snpkey.txt` file:
 ```{bash, eval=FALSE}
 less snpkey.txt
 ```
@@ -78,7 +78,7 @@ As it runs, you will see its progress being printed slowly across the bottom of 
 control-C
 ```
 \
-to end the program (i.e., hold down the Control key while you type "c"). For the rest of today, we'll use a set of files produced ahead of time with the same command.
+to end the program (i.e. hold down the `Control` key while you type `c`). For the rest of today, we'll use a set of files produced ahead of time with the same command.
 
 ## *__Analyze output__*
 \
@@ -158,7 +158,7 @@ Make a list of all of these SNP ID numbers! You will be referring back to them i
 
 ## *__BLAST__*
 \
-Now, it's time to figure out the identify of these loci. We have just BayeScan locus ID numbers right now, but the `snpkey.txt` file lets us translate those back into contig names and nucleotide positions.
+Now, it's time to identify of these loci. We have just BayeScan locus ID numbers right now, but the `snpkey.txt` file lets us translate those back into contig names and nucleotide positions.
 \
 \
 Back on the cluster, open the `snpkey.txt` file.
@@ -171,7 +171,7 @@ From within the less program, you can search by typing `/` and then the search s
 /YOURSNP
 ```
 \
-where you replace YOURSNP with a SNP number given to you by an instructor.
+where you replace `YOURSNP` with a SNP number given to you by an instructor.
 \
 \
 less should highlight the text you searched for and bring you to that line. If it picked up text in a contig name or bp position (i.e., not the left-hand column), then search again by typing the letter `n` (if necessary, you can type the capital letter `N` to search in the reverse direction).
