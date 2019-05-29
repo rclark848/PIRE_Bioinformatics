@@ -41,7 +41,7 @@ less VCF_BayPass.spid
 \
 \
 \
-*Ploidy of the <data:* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+*Ploidy of the data:* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \
 \
 \
@@ -90,7 +90,7 @@ P6    Pop_3
 When you are finished, exit out of nano.
 \
 \
-To create our correctly formatted BayPass input file using PGDSpider, we will use a batch script. First, you ned to copy this script to your sandbox. Type the following (all on one line)
+To create our correctly formatted BayPass input file using PGDSpider, we will use a batch script. First, you need to copy this script to your sandbox. Type the following (all on one line)
 
 ``` bash
 cp /cm/shared/courses/Bioinfo_Workshop/clownfish_data/PGDSpider_Script.sbatch /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox
@@ -111,7 +111,7 @@ When you are done looking at the script, close out of it. Run PGDSpider by typin
 sbatch PGDSpider_Script.sbatch
 ```
 
-The program should only take ~1 minute to run. Type ls -ltrh to check and see that it's running properly. If it worked, you should see an output file titled `output_BayPass.snps` appear.
+The program should only take ~1 minute to run. Type `ls -ltrh` to check and see that it's running properly. If it worked, you should see an output file titled `output_BayPass.snps` appear.
 \
 \
 Arguments we used:
@@ -122,7 +122,7 @@ Arguments we used:
 -   **-outputformat** ----- format of the output file
 -   **-spid** ------------- specify the name of the .spid file with the necessary parameters
 
-Open the output\_BayPass.snps file. Each line in the file corresponds to an allele. For example, the first two lines display the allele counts for allele 1 and allele 2 at the first locus in all three populations.
+Open the `output_BayPass.snps` file. Each line in the file corresponds to an allele. For example, the first two lines display the allele counts for allele 1 and allele 2 at the first locus in all three populations.
 \
 \
 *What is the allele count of the first allele at the first locus in all three populations?*
