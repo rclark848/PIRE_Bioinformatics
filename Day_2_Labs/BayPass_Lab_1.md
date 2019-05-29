@@ -102,7 +102,7 @@ Once you've done that, open up the script to take a look at what we will be call
 less PGDSpider_Script.sbatch
 ```
 
-You can see the command for PGDSpider is very long, so we wrote a script to simplify the process. (This command should look very familiar! We ran it already on Monday.)
+You can see the command for PGDSpider is very long, so we wrote a script to simplify the process.
 \
 \
 When you are done looking at the script, close out of it. Run PGDSpider by typing
@@ -111,7 +111,7 @@ When you are done looking at the script, close out of it. Run PGDSpider by typin
 sbatch PGDSpider_Script.sbatch
 ```
 
-The program should only take ~1 minute to run. Type ls -ltrh to check and see that it's running properly. If it worked, you should see an output file titled output\_BayPass.snps appear.
+The program should only take ~1 minute to run. Type ls -ltrh to check and see that it's running properly. If it worked, you should see an output file titled `output_BayPass.snps` appear.
 \
 \
 Arguments we used:
@@ -151,7 +151,7 @@ less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/clownfish_allele_counts.
 \
 \
 \
-Go ahead and close the clownfish\_allele\_counts.geno file when done.
+Go ahead and close the `clownfish_allele_counts.geno` file when done.
 
 ***Run BayPass***
 -----------------
