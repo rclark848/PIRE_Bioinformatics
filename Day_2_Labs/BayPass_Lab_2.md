@@ -1,7 +1,7 @@
 BayPass (Part II)
 ================
 
-Once BayPass has finished running, take a look at the output files you have generated. You should see 6 newly creatled files, each with the prefix `BayPass_aux_output_`. Today, we are only concerned with the output file titled `BayPass_aux_output_summary_betai.out`. (Although feel free to look at the other output files if you would like.) Open up that file now.
+Once BayPass has finished running, take a look at the output files you have generated. You should see 6 newly created files, each with the prefix `BayPass_aux_output_`. Today, we are only concerned with the output file titled `BayPass_aux_output_summary_betai.out`. (Although feel free to look at the other output files if you would like.) Open up that file now.
 \
 \
 Each line of the file corresponds to a unique locus/environmental variable combination. This file has columns in the following order:
@@ -16,7 +16,7 @@ Each line of the file corresponds to a unique locus/environmental variable combi
 We are going to focus on the last column, with the Bayes Factor estimates. We will use these estimates to determine if a locus is significantly correlated with a given environmental variable or not.
 \
 \
-Bayes Factors can be thought of as odds ratios. They quantify the support for one model compared to another model (in our case, support for the auxiliary model as compared to the null model.) The greater the support for the auxiliary model, the greater the Bayes Factor, and the association of that SNP with a given environmental covariable. Bayes Factors with a value between 15 and 20 are considered to be "very strong evidence" for selection, while Bayes Factors &gt;20 are considered to be "decisive evidence" for selection. For our purposes, we will consider **any SNP with a Bayes Factor &gt;15 to be under selection**, and strongly correlated with the environmental variable of interest.
+Bayes Factors can be thought of as odds ratios. They quantify the support for one model compared to another model (in our case, support for the auxiliary model as compared to the null model.) The greater the support for the auxiliary model, the greater the Bayes Factor, and the association of that SNP with a given environmental covariable. Bayes Factors with a value between 15 and 20 are considered to be "very strong evidence" for selection, while Bayes Factors &gt;20 are considered to be "decisive evidence" for selection. For our purposes, we will consider **any SNP with a Bayes Factor &gt;20 to be under selection**, and strongly correlated with the environmental variable of interest.
 \
 \
 *Look at covariable 1, marker 6. What is the BF (in dB units)?*
