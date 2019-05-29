@@ -1,12 +1,12 @@
 BayPass (Part II)
 ================
 
-Once BayPass has finished running, take a look at the output files you have generated. You should see 6 newly creatled files, each with the prefix BayPass\_aux\_output\_. Today, we are only concerned with the output file titled BayPass\_aux\_output\_summary\_betai.out. (Although feel free to look at the other output files if you would like.) Open up that file now.
+Once BayPass has finished running, take a look at the output files you have generated. You should see 6 newly creatled files, each with the prefix `BayPass_aux_output_`. Today, we are only concerned with the output file titled `BayPass_aux_output_summary_betai.out`. (Although feel free to look at the other output files if you would like.) Open up that file now.
 \
 \
 Each line of the file corresponds to a unique locus/environmental variable combination. This file has columns in the following order:
 
--   Environmental variable of interest (the number corresponds to the order in which the variables occur in the .env input file)
+-   Environmental variable of interest (the number corresponds to the order in which the variables occur in the `.env` input file)
 -   Marker number
 -   Posterior mean of the regression coefficient
 -   Standard deviation of the regression coefficient
@@ -65,7 +65,7 @@ Quit from R by typing
 q()
 ```
 
-R should have made two text files for you. (Feel free to open the script with less to see how these files were created.) Open the file titled all\_BFs. txt. In this file, each row corresponds with a unique marker (SNP). The first three columns identify what SNP each row contains information for. The last five columns list the Bayes Factor of that marker for each of our five environmental variables.
+R should have made two text files for you. (Feel free to open the script with less to see how these files were created.) Open the file titled `all_BFs. txt`. In this file, each row corresponds with a unique marker (SNP). The first three columns identify what SNP each row contains information for. The last five columns list the Bayes Factor of that marker for each of our five environmental variables.
 \
 \
 *What is the Bayes Factor of marker \#198 for SST Mean? Is this SNP under selection for this environmental variable?*
@@ -73,7 +73,7 @@ R should have made two text files for you. (Feel free to open the script with le
 \
 \
 \
-Close this file and open another one titled candidate\_BFs.txt (This should be in your sandbox, as it was also created by the R script you just ran.) This file has a list of all loci that are under selection for at least one of the environmental variables.
+Close this file and open another one titled `candidate_BFs.txt` (This should be in your sandbox, as it was also created by the R script you just ran.) This file has a list of all loci that are under selection for at least one of the environmental variables.
 \
 \
 We are going to create a histogram in R to look at the distribution of our Bayes Factors.
@@ -103,7 +103,7 @@ Quit from R by typing
 q()
 ```
 
-Transfer the pdf of your histogram and the two text files created by the R script (all\_BFs.txt and candidates\_BFs.txt) to your local computer. Open up the histogram pdf.
+Transfer the pdf of your histogram and the two text files created by the R script (`all_BFs.txt` and `candidates_BFs.txt`) to your local computer. Open up the histogram pdf.
 \
 \
 *What range of Bayes Factors is the most common?*
