@@ -75,7 +75,7 @@ Once vcftools has finished running, you will see some information printed to the
 \
 \
 \
-Open up the FST\_J-P.weir.fst output file. Each line in the file corresponds to a SNP. This file has columns in the following order:
+Open up the `FST_J-P.weir.fst` output file. Each line in the file corresponds to a SNP. This file has columns in the following order:
 
 -   Chromosome ID
 -   SNP bp position
@@ -101,7 +101,7 @@ Search for chromosome TRINITY\_DN39030\_c1\_g1\_i1, SNP position 686.
 \
 \
 \
-Now repeat the *F*<sub>*ST*</sub>*s* calculation for Japan-Indonesia (use --out FST\_J-N) and Philippines-Indonesia (use --out FST\_P-N). Make sure you are including the correct population files!
+Now repeat the *F*<sub>*ST*</sub>*s* calculation for Japan-Indonesia (use `--out FST_J-N`) and Philippines-Indonesia (use `--out FST_P-N`). Make sure you are including the correct population files!
 \
 \
 *What are the Weir and Cockerham mean *F*<sub>*ST*</sub> values for each pair of populations (there should be three pairs)?*
