@@ -30,7 +30,7 @@ Arguments we used:
 -   **--relatedness2** ------- calculate relatedness
 -   **--out** ---------------- specify name of output file
 
-let's look at the output:
+Let's look at the output:
 
 ``` bash
 less clownfish.relatedness
@@ -78,7 +78,7 @@ We will read in a matrix of geographic distances (in km) between each sample tha
 dists <- read.csv("cm/shared/courses/Bioinfo_Workshop/clownfish_data/dists.csv")
 ```
 
-To see the last few lines of what you read in type:
+To see the last few lines of what you read in, type:
 
 ``` r
 tail(dists)
