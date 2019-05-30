@@ -36,7 +36,7 @@ let's look at the output:
 less clownfish.relatedness
 ```
 
-The first two columns of the output file give us the individuals being compared (INDV1 and INDV2). The final column (RELATEDNESS\_PHI) estimates relatedness by giving us the probability of choosing identical alleles when randomly sampling one allele from two individuals at a loci that is heterozygous in at least one of the individuals. Here, anything greater than 0.25 indicates a first-degree relationship (siblings or parent-offspring relationship).
+The first two columns of the output file give us the individuals being compared (`INDV1` and `INDV2`). The final column (`RELATEDNESS_PHI`) estimates relatedness by giving us the probability of choosing identical alleles when randomly sampling one allele from two individuals at a loci that is heterozygous in at least one of the individuals. Here, anything greater than 0.25 indicates a first-degree relationship (siblings or parent-offspring relationship).
 
 *How related is individual J11 to J13?*
 \
@@ -55,7 +55,7 @@ The first two columns of the output file give us the individuals being compared 
 \
 \
 \
-Exit out of the clownfish.relatedness file when done.
+Exit out of the `clownfish.relatedness` file when done.
 
 ***Plot relatedness vs. geographic distance***
 ----------------------------------------------
@@ -115,7 +115,7 @@ plot(dat$geo, dat$RELATEDNESS_PHI, xlab="Distance (km)", ylab="Relatedness")
 dev.off()
 ```
 
-Download the relatedness.pdf file from Turing and open it.
+Download the `relatedness.pdf` file from Turing and open it.
 
 *How does relatedness vary with geographic distance?*
 \
@@ -140,7 +140,7 @@ Let's switch back to R on Turing and look at isolation-by-distance from a popula
 fsts <- data.frame(POP1=c("J", "J", "P"), POP2=c("P", "N", "N"), fsts=NA, geo=NA)
 ```
 
-Then read in the Japan-Philippines *F*<sub>*ST*</sub> values that were output vy vcftools in our previous lab and save it to our new dataframe. Type:
+Then read in the Japan-Philippines *F*<sub>*ST*</sub> values that were output by vcftools in our previous lab and save it to our new dataframe. Type:
 
 ``` r
 infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-P.log")
@@ -148,7 +148,7 @@ infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/F
 fsts&fsts[1] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
 
-Look at your dataframe to see that it worked. You should see the fsts column begin to fill:
+Look at your dataframe to see that it worked. You should see the `fsts` column begin to fill:
 
 ``` r
 fsts
@@ -170,7 +170,7 @@ infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/F
 fsts$fst[3] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
 
-Look at your dataframe to see that it worked. The fsts column should be filled with values now:
+Look at your dataframe to see that it worked. The `fsts` column should be filled with values now:
 
 ``` r
 fsts
@@ -215,7 +215,7 @@ abline(lm(linfst ~ geo, data=fsts))
 dev.off()
 ```
 
-Download this plot (fsts.pdf) and look at it.
+Download this plot (`fsts.pdf`) and look at it.
 
 *What evidence do you see for or against isolation-by-distance patterns at the population level?*
 \
@@ -266,7 +266,7 @@ With our data formatted, we're finally ready to run a Mantel tet:
 mantel(fstmat, geomat)
 ```
 
-The results are reported to the screen. The Mantel statistic *r* is a measure of correlation from 0 (low) to 1 (high). The p-value is reported as "Significance."
+The results are reported to the screen. The Mantel statistic *r* is a measure of correlation from 0 (low) to 1 (high). The p-value is reported as `Significance`.
 
 *How correlated are *F*<sub>*ST*</sub> and geographic distance? Is this value low or high?*
 \
