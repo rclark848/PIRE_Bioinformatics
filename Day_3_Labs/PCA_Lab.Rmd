@@ -46,7 +46,7 @@ Check to see that the output file was created
 ls -lhtr
 ```
 \
-You should see your new file at the bottom (clownfish_nooutliers.recode.vcf), about 8 MB.
+You should see your new file at the bottom (`clownfish_nooutliers.recode.vcf`), about 8 MB.
 
 ## *__Run plink__*
 
@@ -79,20 +79,20 @@ You'll also notice that plink wrote a few things to the screen. One line says ho
 \
 \
 \
-The output file that we are especially interested in is the one with the extension .eigenvec. This file contains each individual's loadings on each of the principal components, and it is these loadings that we will plot to ivsualize the data.
+The output file that we are especially interested in is the one with the extension `.eigenvec`. This file contains each individual's loadings on each of the principal components, and it is these loadings that we will plot to visualize the data.
 \
 \
-In addition, we will also look at the plink2.eigenvec.var file. It tells us how much each SNP contributes to each principal component.
+In addition, we will also look at the `plink2.eigenvec.var` file. It tells us how much each SNP contributes to each principal component.
 
 ## *__Download data output__*
 
 \
-Use WinSCP on your Desktop to download the plink2.eigenvec and plink2.eigenvec.var files to your local computer (saving to the desktop or in your Documents is fine).
+Use WinSCP on your Desktop to download the `plink2.eigenvec` and `plink2.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine).
 
 ## *__Make a PCA plot__*
 
 \
-Open Microsoft Excel and import the plink2.eigenvec file into Excel. You may have to tell Excell to show you "any file" (not just those ending in .txt, .csv, or .xlsx). It will ask you how you want to import the file. Use "Delimited" and make sure "Space" is checked so that it will create a column break when it finds a space.
+Open Microsoft Excel and import the plink2.eigenvec file into Excel. You may have to tell Excel to show you `any file` (not just those ending in .txt, .csv, or .xlsx). It will ask you how you want to import the file. Use `Delimited` and make sure `Space` is checked so that it will create a column break when it finds a space.
 \
 \
 The file should now display as a series of columns:
@@ -111,12 +111,12 @@ If Excel is foreign to you, here's a short guide:
 1. Select all cells in the first two PCA columns for individuals in Japan
 2. Choose to insert a chart, and make it a scatter plot
 3. The Japan samples should be plotted
-4. Right click on the chart and choose "Select data"
-5. "Add" a new data series
+4. Right click on the chart and choose `Select data`
+5. `Add` a new data series
 6. For the X values in the new series, select all cells in the first PCA column for the Indonesia samples
 7. For the Y values in the new series, select all the cells in the second PCA column for the Indonesia samples
 8. Add a new data series for the Philippines (same as for Indonesia)
-9. Click OK and look at it!
+9. Click `OK` and look at it!
 
 If populations are significantly differentiated then we expect to see clustering of individuals by their respective populations. This clustering will not necessarily occur on the first several principal components though, so you may want to create graphs of the first vs. third PCA, first vs. fourth, etc., to see the major patterns in the data.
 \
@@ -150,7 +150,7 @@ Don't exit out of Excel yet.
 Now we'll understand which SNPs are important for driving the patterns in the PCA plot. The importance is stated in terms of "loadings," which reflect the degree to which the allele at each SNP affects the position of an individual along a PC axis.
 \
 \
-Open Microsoft Excel and open plink2.eigenvec.var from within Excel.
+Open Microsoft Excel and open `plink2.eigenvec.var` from within Excel.
 \
 \
 Each line is a SNP in our dataset. The columns are:
@@ -162,7 +162,7 @@ Each line is a SNP in our dataset. The columns are:
 * **NONMAJ:**  The alternative allele
 * **PC1-10:**  The loadings of each SNP on each PC axis
 
-Make sure either none of the data sheet is selected, or all of it is selected. Choose "sort" from the "data" menu and ask Excel to sort your data on the PC1 axis (from smallest to largest).
+Make sure either none of the data sheet is selected, or all of it is selected. Choose `sort` from the `data` menu and ask Excel to sort your data on the PC1 axis (from smallest to largest).
 \
 \
 Check that this worked: you should see negative values for PC1 at the top, and positive values at the bottom.
@@ -192,7 +192,7 @@ If you have time, repeat the PCA analysis, but trim only to the outliers for you
 vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --positions /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt --recode --out clownfish_outliersonly
 ```
 \
-This will create a file called clownfish_outliersonly.recode.vcf that you can use as input to plink.
+This will create a file called `clownfish_outliersonly.recode.vcf` that you can use as input to plink.
 \
 \
 Now type (all on the same line)
@@ -200,7 +200,7 @@ Now type (all on the same line)
 plink2 --pca var-wts vcols=chrom,pos,maj,nonmaj --bad-freqs --allow-extra-chr --vcf clownfish_outliersonly.recode.vcf --out outliersonly
 ```
 \
-Use WinSCP on your Desktop to download the outliersonly.eigenvec and outliersonly.eigenvec.var files to your local computer (saving to the desktop or in your Documents is fine). Open the files up in Excel and create a PCA, just as you did before.
+Use WinSCP on your Desktop to download the `outliersonly.eigenvec` and `outliersonly.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine). Open the files up in Excel and create a PCA, just as you did before.
 \
 \
 *How does the clustering of individuals along the PCA axes change as compared to the PCA you made with outliers?*
@@ -229,7 +229,7 @@ Switch back to Turing when you are done.
 ## *__Optional: Run PCA with all loci (neutral and non-neutral) included__*
 
 \
-If you have time, repeat the PCA analysis, but use /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf as your input file to plink.
+If you have time, repeat the PCA analysis, but use `/cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf` as your input file to plink.
 \
 \
 Type (all on the same line)
@@ -237,7 +237,7 @@ Type (all on the same line)
 plink2 --pca var-wts vcols=chrom,pos,maj,nonmaj --bad-freqs --allow-extra-chr --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --out allsnps
 ```
 \
-Use WinSCP on your Desktop to download the allsnps.eigenvec and allsnps.eigenvec.var files to your local computer (saving to the desktop or in your Documents is fine). Open the files up in Excel and create a PCA, just as you did before.
+Use WinSCP on your Desktop to download the `allsnps.eigenvec` and `allsnps.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine). Open the files up in Excel and create a PCA, just as you did before.
 \
 \
 *How does the clustering of individuals along the PCA axes change as compared to the previous two PCAs you created?**
