@@ -11,7 +11,7 @@ In this lab, we are going to investigate $F_{ST}$ values. $F_{ST}$ values (or fi
 $F_{ST}$ values range from 0 to 1. A value of 0 indicates that there is no differentiation among subpopulations (all subpopulations have the same allele frequencies). A value of 1 indicates complete differentiation among subpopulations (all subpopulations are fixed for different alleles).
 \
 \
-We have looked at $F_{ST}$ values before when we ran BayeScan and identified $F_{ST}$ outliers, or loci that diverge more than "expected" due to selection. Selection is not the only evolutionary process that can affect $F_{ST}$ values, however. Gene flow can also impact $F_{ST}$ values, as it tends to decrease the amount of differentiation between subpopulations.
+We have looked at $F_{ST}$ values before when we ran BayeScan and identified $F_{ST}$ outliers, or loci that diverge more than "expected" due to selection. Selection is not the only evolutionary process that can affect $F_{ST}$ values, however. Gene flow can also impact $F_{ST}$ values, as it tends to decrease the amount of differentiation among subpopulations.
 \
 \
 *Would gene flow increase or decrease $F_{ST}$ values? Why?*
@@ -51,7 +51,7 @@ Do these loci look familiar? They should. This text file is a list of all the ca
 \
 To calculate $F_{ST}s$ between Japan and the Philippines using vcftools, type the following
 ```{bash, eval=FALSE}
-enable_lmood
+enable_lmod
 module load vcftools/0.1
 ```
 \
@@ -128,7 +128,7 @@ Close out of any file you may have open.
 
 ## *__$F_{ST}$ and gene flow__*
 
-We know that gene flow impacts $F_{ST}$ values. Thus, one might be tempted to use $F_{ST}s$ to estimate migration rates between populations. One way to do so uses the island model formula:
+We know that gene flow impacts $F_{ST}$ values. Thus, one might be tempted to use $F_{ST}s$ to estimate migration rates among populations. One way to do so uses the island model formula:
 
 $F_{ST} = 1/(4Nm + 1)$
 
