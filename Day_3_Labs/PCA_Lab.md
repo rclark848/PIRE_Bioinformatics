@@ -12,12 +12,12 @@ Log on to Turing.
 We made a list of SNPs that are putatively under selection from our BayPass analysis, so we'll exclude them from our analysis before proceeding.
 \
 \
-Let's look at this file, which has chromosome (contig) names and SNP positionsn separated by tabs:
+Let's look at this file, which has chromosome (contig) names and SNP positions separated by tabs:
 
 ``` bash
 salloc -c 12
 
-less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier candnames.txt
+less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt
 ```
 
 Then run vcftools to drop these loci (remove them from our vcf). From your sandbox type:
@@ -114,13 +114,13 @@ If Excel is foreign to you, here's a short guide:
 2.  Choose to insert a chart, and make it a scatter plot
 3.  The Japan samples should be plotted
 4.  Right click on the chart and choose `Select data`
-5.  `Add` a new data series
-6.  For the X values in the new series, select all cells in the first PCA column for the Indonesia samples
+5.  Add a new data series
+6.  For the X values in the new series, select all the cells in the first PCA column for the Indonesia samples
 7.  For the Y values in the new series, select all the cells in the second PCA column for the Indonesia samples
 8.  Add a new data series for the Philippines (same as for Indonesia)
 9.  Click `OK` and look at it!
 
-If populations are significantly differentiated then we expect to see clustering of individuals by their respective populations. This clustering will not necessarily occur on the first several principal components though, so you may want to create graphs of the first vs. third PCA, first vs. fourth, etc., to see the major patterns in the data.
+If populations are significantly differentiated, then we expect to see clustering of individuals by their respective populations. This clustering will not necessarily occur on the first several principal components though, so you may want to create graphs of the first vs. third PCs, first vs. fourth, etc., to see the major patterns in the data.
 \
 \
 *Do individuals within populations cluster together? Why do you think so (or not)?*
@@ -137,7 +137,7 @@ If populations are significantly differentiated then we expect to see clustering
 \
 \
 \
-*Does changing the principal compoents you compare change the way individuals cluster? (E.g. comparing PC 1 to PC 3 vs. comparing PC2 to PC 3, etc.)*
+*Does changing the principal components you compare change the way individuals cluster? (E.g. comparing PC 1 to PC 3 vs. comparing PC 2 to PC 3, etc.)*
 \
 \
 \
@@ -152,7 +152,7 @@ Don't exit out of Excel yet.
 Now we'll understand which SNPs are important for driving the patterns in the PCA plot. The importance is stated in terms of "loadings," which reflect the degree to which the allele at each SNP affects the position of an individual along a PC axis.
 \
 \
-Open Microsoft Excel and open `plink2.eigenvec.var` from within Excel.
+Open `plink2.eigenvec.var` from within Excel.
 \
 \
 Each line is a SNP in our dataset. The columns are:
@@ -175,7 +175,7 @@ Check that this worked: you should see negative values for PC1 at the top, and p
 \
 \
 \
-*Which 5 SNps are most strongly, negatively loaded on PC1? Are any of these SNPs on the same contig?*
+*Which 5 SNPs are most strongly, negatively loaded on PC1? Are any of these SNPs on the same contig?*
 \
 \
 \
@@ -255,4 +255,4 @@ Use WinSCP on your Desktop to download the `allsnps.eigenvec` and `allsnps.eigen
 \
 \
 \
-*Does this PCA look more like the PCA with outliers only or the PCA with outliers excluded? Why doyou think this is so?*
+*Does this PCA look more like the PCA with outliers only or the PCA with outliers excluded? Why do you think this is so?*
