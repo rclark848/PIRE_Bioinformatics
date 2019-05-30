@@ -7,7 +7,7 @@ In this lab, we are going to investigate *F*<sub>*ST*</sub> values. *F*<sub>*ST*
 *F*<sub>*ST*</sub> values range from 0 to 1. A value of 0 indicates that there is no differentiation among subpopulations (all subpopulations have the same allele frequencies). A value of 1 indicates complete differentiation among subpopulations (all subpopulations are fixed for different alleles).
 \
 \
-We have looked at *F*<sub>*ST*</sub> values before when we ran BayeScan and identified *F*<sub>*ST*</sub> outliers, or loci that diverge more than "expected" due to selection. Selection is not the only evolutionary process that can affect *F*<sub>*ST*</sub> values, however. Gene flow can also impact *F*<sub>*ST*</sub> values, as it tends to decrease the amount of differentiation between subpopulations.
+We have looked at *F*<sub>*ST*</sub> values before when we ran BayeScan and identified *F*<sub>*ST*</sub> outliers, or loci that diverge more than "expected" due to selection. Selection is not the only evolutionary process that can affect *F*<sub>*ST*</sub> values, however. Gene flow can also impact *F*<sub>*ST*</sub> values, as it tends to decrease the amount of differentiation among subpopulations.
 \
 \
 *Would gene flow increase or decrease *F*<sub>*ST*</sub> values? Why?*
@@ -50,7 +50,7 @@ Do these loci look familiar? They should. This text file is a list of all the ca
 To calculate *F*<sub>*ST*</sub>*s* between Japan and the Philippines using vcftools, type the following
 
 ``` bash
-enable_lmood
+enable_lmod
 module load vcftools/0.1
 ```
 
@@ -101,7 +101,7 @@ Search for chromosome TRINITY\_DN39030\_c1\_g1\_i1, SNP position 686.
 \
 \
 \
-Now repeat the *F*<sub>*ST*</sub>*s* calculation for Japan-Indonesia (use `--out FST_J-N`) and Philippines-Indonesia (use `--out FST_P-N`). Make sure you are including the correct population files!
+Now repeat the *F*<sub>*ST*</sub> calculation for Japan-Indonesia (use `--out FST_J-N`) and Philippines-Indonesia (use `--out FST_P-N`). Make sure you are including the correct population files!
 \
 \
 *What are the Weir and Cockerham mean *F*<sub>*ST*</sub> values for each pair of populations (there should be three pairs)?*
@@ -129,11 +129,11 @@ Close out of any file you may have open.
 ****F*<sub>*ST*</sub> and gene flow***
 ----------------------------------------
 
-We know that gene flow impacts *F*<sub>*ST*</sub>*s* values. Thus, one might be tempted to use *F*<sub>*ST*</sub>*s* to estimate migration rates between populations. One way to do so uses the island model formula:
+We know that gene flow impacts *F*<sub>*ST*</sub> values. Thus, one might be tempted to use *F*<sub>*ST*</sub>*s* to estimate migration rates among populations. One way to do so uses the island model formula:
 
 *F*<sub>*ST*</sub> = 1/(4*Nm* + 1)
 
-In this formula, *N* represents the population size and *m* represents the migration rate between populations (as a proportion). The island model assumes that all populations are of equal size and migration rates are the same for all populations as well. Often, these terms are combined together, as we are generally interested in the number of migrant individuals among populations (*Nm*).
+In this formula, *N* represents the population size and *m* represents the migration rate among populations (as a proportion). The island model assumes that all populations are of equal size and migration rates are the same for all populations as well. Often, these terms are combined together, as we are generally interested in the number of migrant individuals among populations (*Nm*).
 \
 \
 Go ahead and use the island model formula to calculate the number of migrant individuals (*Nm*) for Japan-Philippines. Use the Weir and Cockerham mean *F*<sub>*ST*</sub>*s* estimate you wrote down earlier.
@@ -160,7 +160,7 @@ The island model makes many assumptions about our dataset and the demographic pa
 3.  Each population exchanges migrants at the same rate
 4.  Populations are at HWE
 
-*Think back to what you know about our clownfish dataset. To what extent do our data emet these assumptions?*
+*Think back to what you know about our clownfish dataset. To what extent do our data meet these assumptions?*
 \
 \
 \

@@ -132,7 +132,7 @@ We know that gene flow impacts $F_{ST}$ values. Thus, one might be tempted to us
 
 $F_{ST} = 1/(4Nm + 1)$
 
-In this formula, *N* represents the population size and *m* represents the migration rate between populations (as a proportion). The island model assumes that all populations are of equal size and migration rates are the same for all populations as well. Often, these terms are combined together, as we are generally interested in the number of migrant individuals among populations (*Nm*).
+In this formula, *N* represents the population size and *m* represents the migration rate among populations (as a proportion). The island model assumes that all populations are of equal size and migration rates are the same for all populations as well. Often, these terms are combined together, as we are generally interested in the number of migrant individuals among populations (*Nm*).
 \
 \
 Go ahead and use the island model formula to calculate the number of migrant individuals (*Nm*) for Japan-Philippines. Use the Weir and Cockerham mean $F_{ST}$ estimate you wrote down earlier.
@@ -159,7 +159,7 @@ The island model makes many assumptions about our dataset and the demographic pa
 3. Each population exchanges migrants at the same rate
 4. Populations are at HWE
 
-*Think back to what you know about our clownfish dataset. To what extent do our data emet these assumptions?*
+*Think back to what you know about our clownfish dataset. To what extent do our data meet these assumptions?*
 \
 \
 \
