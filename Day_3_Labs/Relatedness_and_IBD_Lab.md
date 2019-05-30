@@ -260,7 +260,7 @@ Look at it:
 geomat
 ```
 
-With our data formatted, we're finally ready to run a Mantel tet:
+With our data formatted, we're finally ready to run a Mantel test:
 
 ``` r
 mantel(fstmat, geomat)
@@ -278,4 +278,4 @@ The results are reported to the screen. The Mantel statistic *r* is a measure of
 \
 \
 \
-*Please explain how you might change the study design to better fit for isolation-by-distance patterns.*
+*Please explain how you might change the study design to better test for isolation-by-distance patterns.*
