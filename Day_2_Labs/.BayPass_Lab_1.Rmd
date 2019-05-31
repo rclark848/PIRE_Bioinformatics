@@ -19,17 +19,18 @@ Open up PuTTY and log on to your Turing account.
 Type
 ```{bash, eval=FALSE}
 salloc -c 12
+bash -l
 ```
 \
 To use PGDSpider, we will need our vcf file to be converted, as well as a .spid file that specifies the parameters PGDSpider will use during the conversion. This .spid file has already been created for you.
 \
 \
-Copy the .spid file to your sandbox by typing (all on one line)
+Copy the .spid file to your workspace by typing (all on one line)
 ```{bash, eval=FALSE}
-cp /cm/shared/courses/Bioinfo_Workshop/clownfish_data/VCF_BayPass.spid /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/
+cp /cm/shared/courses/Bioinfo_Workshop/clownfish_data/VCF_BayPass.spid /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
 ```
 \
-From your sandbox, open up the file in less to examine the settings:
+From your workspace, open up the file in less to examine the settings:
 ```{bash, eval=FALSE}
 less VCF_BayPass.spid
 ```
@@ -49,7 +50,7 @@ less VCF_BayPass.spid
 *Do we want to include non-polymorphic SNPs?* _______________________________
 \
 \
-Exit out of the .spid file. Move to your sandbox if you're not there already.
+Exit out of the .spid file. Move to your workspace if you're not there already.
 \
 \
 We will need to make a text file that specifies what population each individual belongs to in order to convert our .vcf file to the proper format. Go ahead and do that now by typing
@@ -89,9 +90,9 @@ P6    Pop_3
 When you are finished, exit out of nano.
 \
 \
-To create our correctly formatted BayPass input file using PGDSpider, we will use a batch script. First, you need to copy this script to your sandbox. Type the following (all on one line)
+To create our correctly formatted BayPass input file using PGDSpider, we will use a batch script. First, you need to copy this script to your workspace Type the following (all on one line)
 ```{bash, eval=FALSE}
-cp /cm/shared/courses/Bioinfo_Workshop/clownfish_data/PGDSpider_Script.sbatch /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox
+cp /cm/shared/courses/Bioinfo_Workshop/clownfish_data/PGDSpider_Script.sbatch /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace
 ```
 \
 Once you've done that, open up the script to take a look at what we will be calling
