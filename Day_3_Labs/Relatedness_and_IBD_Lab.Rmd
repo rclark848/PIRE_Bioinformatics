@@ -17,10 +17,11 @@ In our last lab, we used $F_{ST}$ as a measure of genetic differentiation among 
 \
 vcftools will calculate relatedness for us (specifically, the probability of choosing identical alleles when randomly sampling one allele from two individuals at a given locus). We'll again exclude the loci that we think may be under selection.
 
-Log on to Turing. From your sandbox:
+Log on to Turing. From your workspace:
 
 ```{bash, eval= FALSE}
 salloc -c 12
+bash -l
 
 enable_lmod
 module load vcftools/0.1
@@ -144,7 +145,7 @@ fsts <- data.frame(POP1=c("J", "J", "P"), POP2=c("P", "N", "N"), fsts=NA, geo=NA
 \
 Then read in the Japan-Philippines $F_{ST}$ values that were output by vcftools in our previous lab and save it to our new dataframe. Type:
 ```{r, eval=FALSE}
-infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-P.log")
+infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/FST_J-P.log")
 
 fsts&fsts[1] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
@@ -156,14 +157,14 @@ fsts
 \
 Now repeat for Japan-Indonesia:
 ```{r, eval=FALSE}
-infile <- readLines ("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-N.log")
+infile <- readLines ("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/FST_J-N.log")
 
 fsts$fsts[2] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
 \
 And for Philippines-Indonesia:
 ```{r, eval=FALSE}
-infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_P-N.log")
+infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/FST_P-N.log")
 
 fsts$fst[3] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```

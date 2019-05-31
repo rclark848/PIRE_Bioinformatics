@@ -8,10 +8,11 @@ In our last lab, we used *F*<sub>*ST*</sub> as a measure of genetic differentiat
 
 vcftools will calculate relatedness for us (specifically, the probability of choosing identical alleles when randomly sampling one allele from two individuals at a given locus). We'll again exclude the loci that we think may be under selection.
 
-Log on to Turing. From your sandbox:
+Log on to Turing. From your workspace:
 
 ``` bash
 salloc -c 12
+bash -l
 
 enable_lmod
 module load vcftools/0.1
@@ -92,7 +93,7 @@ tail(dists)
 Then read in the relatedness values you calculated. Type (all on one line):
 
 ``` r
-rels <- read.table("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/clownfish.relatedness", header=TRUE)
+rels <- read.table("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/clownfish.relatedness", header=TRUE)
 ```
 
 And look at it:
@@ -143,7 +144,7 @@ fsts <- data.frame(POP1=c("J", "J", "P"), POP2=c("P", "N", "N"), fsts=NA, geo=NA
 Then read in the Japan-Philippines *F*<sub>*ST*</sub> values that were output by vcftools in our previous lab and save it to our new dataframe. Type:
 
 ``` r
-infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-P.log")
+infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/FST_J-P.log")
 
 fsts&fsts[1] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
@@ -157,7 +158,7 @@ fsts
 Now repeat for Japan-Indonesia:
 
 ``` r
-infile <- readLines ("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_J-N.log")
+infile <- readLines ("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/FST_J-N.log")
 
 fsts$fsts[2] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
@@ -165,7 +166,7 @@ fsts$fsts[2] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", ''
 And for Philippines-Indonesia:
 
 ``` r
-infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/FST_P-N.log")
+infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/FST_P-N.log")
 
 fsts$fst[3] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
