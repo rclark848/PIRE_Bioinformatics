@@ -32,10 +32,11 @@ Go ahead and log in to Turing.
 We are going to calculate *F*<sub>*ST*</sub> values for our clownfish dataset using vcftools. This will give us an estimate of how much variation there is among our clownfish subpopulations (Japan, Indonesia, and the Philippines).
 \
 \
-On Turing, navigate to your sandbox, and get a node to work on:
+On Turing, navigate to your workspace, and get a node to work on:
 
 ``` bash
 salloc -c 12
+bash -l
 ```
 
 Open up the text file with the candidate loci that we identified yesterday by typing (all on one line)
