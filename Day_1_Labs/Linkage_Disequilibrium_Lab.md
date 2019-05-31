@@ -6,10 +6,11 @@ Linkage disequilibrium (also called gametic disequilibrium) is the non-random as
 ***Calculating LD***
 --------------------
 
-First, log in to Turing, navigate to your sandbox, and get a node to work on:
+First, log in to Turing, navigate to your workspace, and get a node to work on:
 
 ``` bash
 salloc -c 12
+bash -l
 ```
 
 vcftools conveniently calculates *r*<sup>2</sup> (a measure of LD) between pairs of loci for us. To do this type
@@ -137,7 +138,7 @@ Now sort by distance class:
 setkey(bins, distclass)
 ```
 
-And make a plot of average *r*<sup>2</sup> vs. *log*<sub>10</sub> distance! We will write the plot straight to a PDF file on Midas. The `pdf()` command starts the plot, and the `dev.off()` command ends writing to the plot.
+And make a plot of average *r*<sup>2</sup> vs. *log*<sub>10</sub> distance! We will write the plot straight to a PDF file on Turing. The `pdf()` command starts the plot, and the `dev.off()` command ends writing to the plot.
 
 ``` r
 pdf(width=4, height=4, file="ld_decay.pdf")

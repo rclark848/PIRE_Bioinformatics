@@ -14,9 +14,10 @@ Linkage disequilibrium (also called gametic disequilibrium) is the non-random as
 ## *__Calculating LD__*
 
 \
-First, log in to Turing, navigate to your sandbox, and get a node to work on:
+First, log in to Turing, navigate to your workspace, and get a node to work on:
 ```{bash, eval=FALSE}
 salloc -c 12
+bash -l
 ```
 \
 vcftools conveniently calculates $r^2$ (a measure of LD) between pairs of loci for us. To do this type
@@ -128,7 +129,7 @@ Now sort by distance class:
 setkey(bins, distclass)
 ```
 \
-And make a plot of average $r^2$ vs. $log_{10}$ distance! We will write the plot straight to a PDF file on Midas. The `pdf()` command starts the plot, and the `dev.off()` command ends writing to the plot.
+And make a plot of average $r^2$ vs. $log_{10}$ distance! We will write the plot straight to a PDF file on Turing. The `pdf()` command starts the plot, and the `dev.off()` command ends writing to the plot.
 ```{r, eval=FALSE}
 pdf(width=4, height=4, file="ld_decay.pdf")
 bins[,plot(distclass, r2ave, type="1", xlab="Distance (log10 bp)", ylab="Average correlation (r2)", main="LD decay", xlim=c(0,3))]
@@ -150,7 +151,7 @@ To choose not to save your workspace (it's not necessary).
 \
 Now use WinSCP to download the pdf that you just made to your local computer. The absolute path to the pdf is
 ```{bash, eval=FALSE}
-/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/ld_decay.pdf
+/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/ld_decay.pdf
 ```
 \
 *Please describe how linkage between loci varies as a function of physical distance between them.*
