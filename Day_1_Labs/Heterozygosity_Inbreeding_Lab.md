@@ -255,7 +255,7 @@ We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individua
 \
 \
 \
-*How does *F*<sub>*IS*</sub> for individual J19 compare to the *F*<sub>*IS*</sub> of other individuals in Japan?* *Is *F*<sub>*I**</sub> in Japan generally low or high? (Remember, *F*<sub>*IS*</sub> is capped between -1 and 1.)*
+*How does *F*<sub>*IS*</sub> for individual J19 compare to the *F*<sub>*IS*</sub> of other individuals in Japan?* *Is *F*<sub>*I*</sub> in Japan generally low or high? (Remember, *F*<sub>*IS*</sub> is capped between -1 and 1.)*
 \
 \
 \
