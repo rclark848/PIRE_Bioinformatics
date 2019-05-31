@@ -57,7 +57,7 @@ The third line of the file begins the genotype data. Column 1 has the individual
 \
 *What is the allele frequency of allele \#1?*
 \
-(Hint: Refer to the first page of the lab if you forget how to calculate allele frequencies. In Excel, simply click on a blank cell and type `=`. Then count the number of times allele 1 appears and type that after the "=". Divide that by the total number of alleles in the population. Hit `Enter`.)
+(Hint: Refer to the first page of the lab if you forget how to calculate allele frequencies. In Excel, simply click on a blank cell and type `=`. Then count the number of times allele 1 appears and type that after the `=`. Divide that by the total number of alleles in the population. Hit `Enter`.)
 \
 \
 \
@@ -106,7 +106,7 @@ Heterozygosity can be calculated in two different ways:
 When we did our heterozygosity calculations by hand, we measured heterozygosity on a per locus basis. Let's try calculating heterozygosity per individual using **vcftools**.
 \
 \
-Open up PuTTY and loc on to your Turing account. Type
+Open up PuTTY and log on to your Turing account. Type
 
 ``` bash
 salloc -c 12
@@ -124,7 +124,7 @@ To skip the header and get to the data part of the file, search for the word `CH
 /CHROM
 ```
 
-and hitting return. `CHROM` is useful because it's a word in the header of the data section.
+and hitting `enter`. `CHROM` is useful because it's a word in the header of the data section.
 \
 \
 The header line starts with `#CHROM` and has the following columns:
@@ -140,7 +140,7 @@ The header line starts with `#CHROM` and has the following columns:
 -   **FORMAT** ----------- defines the order of dat in the genotype columns. GT:AD:DP:GQ:PL means genotype (0 for reference, 1 for alternate), depths of reads for each allele, total depth of reads, Phred score, Phred-scaled genotype likelihoods
 -   **Name of samples** -- each of these columns is for the individual given in the header
 
-The sample names are coded so that J represents Japan, P represents Philippines, and N represents inviduals from Indonesia.
+The sample names are coded so that J represents Japan, P represents Philippines, and N represents individuals from Indonesia.
 \
 \
 To quit from the less program, type
@@ -149,10 +149,10 @@ To quit from the less program, type
 q
 ```
 
-Now navigate to your sandbox if you're not there already
+Now navigate to your workspace if you're not there already
 
 ``` bash
-cd /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/
+cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
 ```
 
 At first, we only want to calculate the heterozygosity of individuals from the Japanese population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude. Create a new text file by typing
@@ -174,7 +174,7 @@ J17
 J19
 ```
 
-To exit nano, look at the bottom of the screen. You will see that it says ^X for Exit. This means `Control X`. Type that, then follow the instructions to save the file as `J_individuals.txt`.
+To exit nano, look at the bottom of the screen. You will see that it says `^X` for Exit. This means `Control X`. Type that, then follow the instructions to save the file as `J_individuals.txt`.
 \
 \
 To calculate heterozygosity using vcftools, we need to load the program first. Type the following (all on one line):
@@ -255,7 +255,7 @@ We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individua
 \
 \
 \
-*How does *F*<sub>*IS*</sub> for individual J19 compare to the *F*<sub>*IS*</sub> of other individuals in Japan? Is *F*<sub>*I**</sub> in Japan generally low or high? (Remember, *F*<sub>*IS*</sub> is capped between -1 and 1.)*
+*How does *F*<sub>*IS*</sub> for individual J19 compare to the *F*<sub>*IS*</sub> of other individuals in Japan?* *Is *F*<sub>*I**</sub> in Japan generally low or high? (Remember, *F*<sub>*IS*</sub> is capped between -1 and 1.)*
 \
 \
 \

@@ -56,7 +56,7 @@ The third line of the file begins the genotype data. Column 1 has the individual
 \
 *What is the allele frequency of allele #1?*
 \
-(Hint: Refer to the first page of the lab if you forget how to calculate allele frequencies. In Excel, simply click on a blank cell and type "=". Then count the number of times allele 1 appears and type that after the "=". Divide that by the total number of alleles in the population. Hit enter.)
+(Hint: Refer to the first page of the lab if you forget how to calculate allele frequencies. In Excel, simply click on a blank cell and type `=`. Then count the number of times allele 1 appears and type that after the `=`. Divide that by the total number of alleles in the population. Hit `enter`.)
 \
 \
 \
@@ -68,14 +68,14 @@ The third line of the file begins the genotype data. Column 1 has the individual
 \
 *What is your expected heterozygosity ($H_{e}$)?*
 \
-(Hint: Refer to the first section of the lab if you forget how to calculate $H_{e}$. In Excel, simply click on a blank cell and type "=2." Then multiply that two by the two allele frequencies you just calculated. Hit enter.)
+(Hint: Refer to the first section of the lab if you forget how to calculate $H_{e}$. In Excel, simply click on a blank cell and type `=2`. Then multiply that two by the two allele frequencies you just calculated. Hit `enter`.)
 \
 \
 \
 \
 *What is your observed heterozygosity ($H_{o}$)?*
 \
-(Hint: Refer to the first section of the lab if you forget how to calculate $H_{o}$. In Excel, simply click on a blank cell and type "=". Then count the number of heterozygotes in the population and type that after the "=". Divide that by the total number of individuals in the population. Hit enter.)
+(Hint: Refer to the first section of the lab if you forget how to calculate $H_{o}$. In Excel, simply click on a blank cell and type `=`. Then count the number of heterozygotes in the population and type that after the `=`. Divide that by the total number of individuals in the population. Hit `enter`.)
 \
 \
 \
@@ -104,7 +104,7 @@ Heterozygosity can be calculated in two different ways:
 
 When we did our heterozygosity calculations by hand, we measured heterozygosity on a per locus basis. Let's try calculating heterozygosity per individual using __vcftools__.
 \
-Open up PuTTY and loc on to your Turing account. Type
+Open up PuTTY and log on to your Turing account. Type
 ```{bash, eval=FALSE}
 salloc -c 12
 ```
@@ -119,7 +119,7 @@ To skip the header and get to the data part of the file, search for the word "CH
 /CHROM
 ```
 \
-and hitting return. CHROM is useful because it's a word in the header of the data section.
+and hitting `enter`. CHROM is useful because it's a word in the header of the data section.
 \
 The header line starts with #CHROM and has the following columns:
 
@@ -135,16 +135,16 @@ The header line starts with #CHROM and has the following columns:
 * **Name of samples** -- each of these columns is for the individual given in the header
 \
 
-The sample names are coded so that J represents Japan, P represents Philippines, and N represents inviduals from Indonesia.
+The sample names are coded so that J represents Japan, P represents Philippines, and N represents individuals from Indonesia.
 \
 To quit from the less program, type
 ```{bash, eval=FALSE}
 q
 ```
 \
-Now navigate to your sandbox if you're not there already
+Now navigate to your workspace if you're not there already
 ```{bash, eval=FALSE}
-cd /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/
+cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
 ```
 \
 At first, we only want to calculate the heterozygosity of individuals from the Japanese population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude. Create a new text file by typing
@@ -164,7 +164,7 @@ J17
 J19
 ```
 \
-To exit nano, look at the bottom of the screen. You will see that it says ^X for Exit. This means "Control X." Type that, then follow the instructions to save the file as J_individuals.txt.
+To exit nano, look at the bottom of the screen. You will see that it says `^X` for Exit. This means `Control X`. Type that, then follow the instructions to save the file as `J_individuals.txt`.
 \
 To calculate heterozygosity using vcftools, we need to load the program first. Type the following (all on one line):
 ```{bash, eval=FALSE}
@@ -184,7 +184,7 @@ Arguments we used:
 * **--out** --- specify name of output file
 \
 
-Open the het_J.het ouput file by typing
+Open the `het_J.het` output file by typing
 ```{bash, eval=FALSE}
 less het_J.het
 ```
@@ -203,7 +203,7 @@ As you can tell, vcftools calculates homozygosity instead of heterozygosity.
 \
 *Calculate the expected ($H_{e}$) and observed ($H_{o}$) # of heterozygous loci for individual J19.*
 \
-(Hint: To calculate $H_{o}$, simply subtract O(Hom) from the total number of loci included in th analysis. To calculate $H_{e}$, subtract E(Hom) from the total number of loci.)
+(Hint: To calculate $H_{o}$, simply subtract O(Hom) from the total number of loci included in the analysis. To calculate $H_{e}$, subtract E(Hom) from the total number of loci.)
 \
 \
 \
@@ -215,7 +215,7 @@ As you can tell, vcftools calculates homozygosity instead of heterozygosity.
 \
 \
 \
-Exit out of the het_J.het file when finished.
+Exit out of the `het_J.het` file when finished.
 
 ## *__Understanding the inbreeding coefficient__*
 \
