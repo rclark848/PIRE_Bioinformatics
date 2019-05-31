@@ -19,7 +19,7 @@ _*H*<sub>*e*</sub>_: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\
 _*H*<sub>*o*</sub>_: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \
 \
-*Do the observed and expected heterozygosities match? Using your judgment, does the population seem to be in Hardy-Weinberg equilibrium?*
+*Do the observed and expected heterozygosities match? Using your judgment, does the population seem to be in Hardy-Weinberg equilibrium at this locus?*
 \
 *(Hint: *H*<sub>*e*</sub> is expected heterozygosity assuming population is at HWE.)*
 \

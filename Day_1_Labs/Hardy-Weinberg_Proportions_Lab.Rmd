@@ -24,7 +24,7 @@ Look back to the first secion of the heterozygosity lab, where we calculated the
 *$H_{o}$*: _________________________________________________________________
 \
 \
-*Do the observed and expected heterozygosities match? Using your judgment, does the population seem to be in Hardy-Weinberg equilibrium?*
+*Do the observed and expected heterozygosities match? Using your judgment, does the population seem to be in Hardy-Weinberg equilibrium at this locus?*
 \
 *(Hint: $H_{e}$ is expected heterozygosity assuming population is at HWE.)*
 \
