@@ -107,15 +107,16 @@ Open up PuTTY and log on to your Turing account. Type
 
 ``` bash
 salloc -c 12
+bash -l
 ```
 
 We only want to calculate HWP within each population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude for each population, just like in the previous lab. We already have a file for Japan (J), but for now we need files for Indonesia (N) and Philippines (P).
 \
 \
-To get ready, navigate to your sandbox if you're not already there
+To get ready, navigate to your workspace if you're not already there
 
 ``` bash
-cd /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/
+cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
 ```
 
 We can then create these files using nano. Create a new text file by typing
