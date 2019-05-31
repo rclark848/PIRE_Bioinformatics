@@ -164,7 +164,7 @@ To choose not to save your workspace (it's not necessary).
 Now use WinSCP to download the pdf that you just made to your local computer. The absolute path to the pdf is
 
 ``` bash
-/cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox/ld_decay.pdf
+/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/ld_decay.pdf
 ```
 
 *Please describe how linkage between loci varies as a function of physical distance between them.*
