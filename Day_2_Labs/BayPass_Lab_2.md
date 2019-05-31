@@ -44,9 +44,10 @@ First, make sure you are logged in to your Turing account and type:
 
 ``` bash
 salloc -c 12
+bash -l
 ```
 
-Navigate to your sandbox. Next, R and the necessary packages:
+Navigate to your workspace. Next, load R and the necessary packages:
 
 ``` bash
 module load R/3.4 readr/
@@ -73,7 +74,7 @@ R should have made two text files for you. (Feel free to open the script with le
 \
 \
 \
-Close this file and open another one titled `candidate_BFs.txt`. (This should be in your sandbox, as it was also created by the R script you just ran.) This file has a list of all loci that are under selection for at least one of the environmental variables.
+Close this file and open another one titled `candidate_BFs.txt`. (This should be in your workspace, as it was also created by the R script you just ran.) This file has a list of all loci that are under selection for at least one of the environmental variables.
 \
 \
 We are going to create a histogram in R to look at the distribution of our Bayes Factors.
