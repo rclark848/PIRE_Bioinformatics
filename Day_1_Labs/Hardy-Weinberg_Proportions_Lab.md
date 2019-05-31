@@ -49,7 +49,7 @@ where *N* is the number of individuals and the *p*<sub>*k*</sub>s are the allele
 *E*[*Heterozygotes*]=*N*(1-*sum*[*p*<sub>*k*</sub><sup>2</sup>]) = 8(1 - *p*<sub>1</sub><sup>2</sup> - *p*<sub>2</sub><sup>2</sup>) = *E*<sub>3</sub>
 \
 \
-Calculate the *E*[*Hom*<sub>1</sub>\], *E*[*Hom*<sub>2</sub>\] and *E[Het]* calculations using the allele frquencies you recorded above
+Calculate the *E*[*Hom*<sub>1</sub>\], *E*[*Hom*<sub>2</sub>\] and *E[Het]* calculations using the allele frequencies you recorded above
 \
 \
 *E*[*Hom*<sub>1</sub>\]=*E*<sub>1</sub>= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_

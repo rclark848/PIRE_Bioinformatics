@@ -50,7 +50,7 @@ where *N* is the number of individuals and the $p_{k}$s are the allele frequenci
 \
 $$E[Heterozygotes] = N(1-\sum_{k=1}^{2}p_k^2) = 8(1 - p_1^2 - p_2^2) = E_{3}$$
 \
-Calculate the $E[Hom_{1}]$, $E[Hom_{2}]$ and *E[Het]* calculations using the allele frquencies you recorded above
+Calculate the $E[Hom_{1}]$, $E[Hom_{2}]$ and *E[Het]* calculations using the allele frequencies you recorded above
 \
 \
 $E[Hom_{1}] = E_{1} =$ ___________________________________________________________
