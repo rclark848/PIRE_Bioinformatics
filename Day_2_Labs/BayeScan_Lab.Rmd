@@ -21,14 +21,15 @@ Open up PuTTY and log on to your turing account.
 Type
 ```{bash, eval=FALSE}
 salloc -c 12
+bash -l
 ```
 \
-Navigate to your sandbox
+Navigate to your workspace
 ```{bash, eval=FALSE}
-cd /cm/shared/courses/Bioinfo_Workshop/sandboxes/yoursandbox
+cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace
 ```
 \
-Then, from your sandbox, run the script. Type (all on one line)
+Then, from your workspace, run the script. Type (all on one line)
 ```{bash, eval=FALSE}
 python /cm/shared/courses/Bioinfo_Workshop/clownfish_data/make_bayescan_input.py /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/popfile 0
 ```
@@ -104,7 +105,7 @@ less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/bayes_input_fst.txt
 \
 \
 \
-It's also useful to create a plot of these results, and BayeScan comes with a nice R script to do this. First, from your sandbox, open R:
+It's also useful to create a plot of these results, and BayeScan comes with a nice R script to do this. First, from your workspace, open R:
 ```{bash, eval=FALSE}
 module load R/3.4
 R
@@ -130,7 +131,7 @@ q()
 Now, use WinSCP to download these two files to your local computer
 ```{bash, eval=FALSE}
 /cm/shared/courses/Bioinfo_Workshop/clownfish_data/bayes_input_fst.txt
-/cm/shared/courses/Bioinfo_Workshop/sandboxes/yourbox/bayes_input.pdf
+/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/bayes_input.pdf
 ```
 \
 Open the `bayes_input.pdf` file. Each locus is a dot with its ID number nearby, and $F_{ST}$ is plotted against the $log_{10}$ Q-value. $log_{10}$ of 0.05 (5%) is -1.3, and a vertical line is plotted here as a cutoff.
@@ -163,7 +164,7 @@ Now, it's time to identify of these loci. We have just BayeScan locus ID numbers
 \
 Back on the cluster, open the `snpkey.txt` file.
 ```{bash, eval=FALSE}
-less /cm/shared/courses/Bioinfo_Workshop/sandboxes/yourbox/snpkey.txt
+less /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/snpkey.txt
 ```
 '\
 From within the less program, you can search by typing `/` and then the search string. Search for the ID of one of the SNPs that may be under selection:
