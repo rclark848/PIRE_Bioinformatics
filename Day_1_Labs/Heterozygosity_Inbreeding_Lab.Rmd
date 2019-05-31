@@ -107,6 +107,7 @@ When we did our heterozygosity calculations by hand, we measured heterozygosity 
 Open up PuTTY and log on to your Turing account. Type
 ```{bash, eval=FALSE}
 salloc -c 12
+bash -l
 ```
 \
 For the labs today (and the rest of the week) we will be working with a VCF file that contains genotype information for clownfish from three different populations (Japan, Philippines, and Indonesia). Open up the VCF file by typing (all on one line)
