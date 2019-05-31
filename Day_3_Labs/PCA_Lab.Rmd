@@ -19,11 +19,12 @@ We made a list of SNPs that are putatively under selection from our BayPass anal
 Let's look at this file, which has chromosome (contig) names and SNP positions separated by tabs:
 ```{bash, eval=FALSE}
 salloc -c 12
+bash -l
 
 less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt
 ```
 \
-Then run vcftools to drop these loci (remove them from our vcf). From your sandbox type:
+Then run vcftools to drop these loci (remove them from our vcf). From your workspace type:
 ```{bash, eval=FALSE}
 enable_lmod
 module load vcftools/0.1

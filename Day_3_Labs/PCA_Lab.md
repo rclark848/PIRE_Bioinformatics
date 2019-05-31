@@ -16,11 +16,12 @@ Let's look at this file, which has chromosome (contig) names and SNP positions s
 
 ``` bash
 salloc -c 12
+bash -l
 
 less /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt
 ```
 
-Then run vcftools to drop these loci (remove them from our vcf). From your sandbox type:
+Then run vcftools to drop these loci (remove them from our vcf). From your workspace type:
 
 ``` bash
 enable_lmod
