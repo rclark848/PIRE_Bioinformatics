@@ -85,7 +85,7 @@ To see the last few lines of what you read in, type:
 tail(dists)
 ```
 
-*How far apart are individuals N6 and N7?*
+*How far apart are individuals N6 and N7? (The `geo` column is in kilometers (km).)*
 \
 \
 \
