@@ -8,7 +8,7 @@ output:
 ---
 ```{r setup, include = FALSE}
 library(data.table)
-library(readr)
+library(tidyverse)
 
 ```
 \
@@ -58,7 +58,7 @@ bash -l
 ```
 Navigate to your workspace Next, load R and the necessary packages:
 ```{bash, eval=FALSE}
-module load R/3.4 readr/
+module load R/3.4 tidyverse/
 R
 ```
 Then, load the formatting script into R:

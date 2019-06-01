@@ -50,7 +50,7 @@ bash -l
 Navigate to your workspace. Next, load R and the necessary packages:
 
 ``` bash
-module load R/3.4 readr/
+module load R/3.4 tidyverse/
 R
 ```
 
