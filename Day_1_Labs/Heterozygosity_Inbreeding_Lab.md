@@ -93,6 +93,15 @@ The third line of the file begins the genotype data. Column 1 has the individual
 \
 \
 \
+*Do the observed and expected heterozygosities match? Using your judgment, does the population seem to be in Hardy-Weinberg equilibrium at this locus?*
+\
+*(Hint: *H*<sub>*e*</sub> is expected heterozygosity assuming population is at HWE.)*
+\
+\
+\
+\
+\
+\
 Exit out of Excel when you are done.
 
 ***Heterozygosity with vcftools***
@@ -156,7 +165,7 @@ Now navigate to your workspace if you're not there already
 cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
 ```
 
-At first, we only want to calculate the heterozygosity of individuals from the Japanese population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude. Create a new text file by typing
+Today, we only want to calculate the heterozygosity of individuals from the Japanese population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude. Create a new text file by typing
 
 ``` bash
 nano J_individuals.txt
