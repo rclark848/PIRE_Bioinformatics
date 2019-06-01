@@ -201,4 +201,4 @@ Arguments we used:
 * **-burnins** ------- number of burn-in iterations for the MCMC
 * **-outprefix** ----- specify prefix for the output files
 
-As the program runs, you will see its progress being printed to the screen. BayPass will take ~30 minutes to run. We will come back to this after the break to check our results.
+As the program runs, you will see its progress being printed to the screen. BayPass will take ~45 minutes to run. We will come back to this after the break to check our results.
