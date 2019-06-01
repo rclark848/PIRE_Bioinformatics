@@ -225,7 +225,7 @@ As you can tell, vcftools calculates homozygosity instead of heterozygosity.
 \
 *Calculate the expected (*H*<sub>*e*</sub>) and observed (*H*<sub>*o*</sub>) \# of heterozygous loci for individual J19.*
 \
-(Hint: To calculate *H*<sub>*o*</sub>, simply subtract O(Hom) from the total number of loci included in th analysis. To calculate *H*<sub>*e*</sub>, subtract E(Hom) from the total number of loci.)
+(Hint: To calculate *H*<sub>*o*</sub>, simply subtract O(Hom) from the total number of loci included in the analysis. To calculate *H*<sub>*e*</sub>, subtract E(Hom) from the total number of loci.)
 \
 \
 \
