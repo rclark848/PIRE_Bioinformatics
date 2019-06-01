@@ -238,7 +238,7 @@ First, turn our *F*<sub>*ST*</sub> dataframe into a distance matrix:
 un1 <- unique(unlist(fsts[,1:2]))
 fstmat <- matrix(0, nrow=length(un1), ncol=length(un1), dimnames=list(un1, un1))
 fstmat[cbind(match(fsts$POP1, rownames(fstmat)), match(fsts$POP2, colnames(fstmat)))] <- fsts$linfst
-fstmat <- stmat + t(fstmat)
+fstmat <- fstmat + t(fstmat)
 ```
 
 Look at it:
