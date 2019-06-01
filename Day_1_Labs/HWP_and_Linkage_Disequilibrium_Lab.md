@@ -1,4 +1,4 @@
-Hardy-Weinberg Proportions (WHP) & Linkage Disequilibrium (LD)
+Hardy-Weinberg Proportions (HWP) & Linkage Disequilibrium (LD)
 ================
 
 First, we are going to pick up where we left off this morning thinking about expected heterozygosity, observed heterozygosity, and Hardy-Weinberg proportions (HWP). Remember that departure from HWP can indicate non-random mating, strong selection acting on a locus, or other evolutionary forces at play.
