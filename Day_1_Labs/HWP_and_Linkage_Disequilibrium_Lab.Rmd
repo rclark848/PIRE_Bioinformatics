@@ -12,7 +12,7 @@ library(data.table)
 First, we are going to pick up where we left off this morning thinking about expected heterozygosity, observed heterozygosity, and Hardy-Weinberg proportions (HWP). Remember that departure from HWP can indicate non-random mating, strong selection acting on a locus, or other evolutionary forces at play.
 \
 \
-Look back to the first secion of the heterozygosity lab, where we calculated the frequencies for allele 1 and allele 2, $H_{e}$ and $H_{o}$ by hand. Write these values down below
+Look back to the first section of the heterozygosity lab, where we calculated the frequencies for allele 1 and allele 2, $H_{e}$ and $H_{o}$ by hand. Write these values down below
 \
 \
 *Frequency of allele 1*: ___________________________________________________
@@ -68,7 +68,7 @@ $O[Hom_{2}] = O_{2} =$ _________________________________________________________
 $O[Het] = O_{3} =$ ______________________________________________________________
 \
 \
-To test whether the observed values ($O_{1}$, $O_{2}$, and $O_{3}$) match the values expected under HWP ($E_{1}$, $E_{2}$, and $E_{3}$), we used a chi-squared ($X^2$) test. The traditional $X^2$ test takes the form
+To test whether the observed values ($O_{1}$, $O_{2}$, and $O_{3}$) match the values expected under HWP ($E_{1}$, $E_{2}$, and $E_{3}$), we use a chi-squared ($X^2$) test. The traditional $X^2$ test takes the form
 \
 $$X^2 = \sum_{j=1}^{3}(O_{j}-E_{j})^2/E_{j} = (O_{1}-E_{1})^2/E_{1} + (O_{2}-E_{2})^2/E_{2} + (O_{3}-E_{3})^2/E_{3}$$
 \
