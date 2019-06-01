@@ -146,7 +146,7 @@ Then read in the Japan-Philippines *F*<sub>*ST*</sub> values that were output by
 ``` r
 infile <- readLines("/cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/FST_J-P.log")
 
-fsts&fsts[1] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
+fsts$fsts[1] <- as.numeric(gsub("Weir and Cockerham weighted Fst estimate: ", '', grep("weighted", infile, value=TRUE)))
 ```
 
 Look at your dataframe to see that it worked. You should see the `fsts` column begin to fill:
