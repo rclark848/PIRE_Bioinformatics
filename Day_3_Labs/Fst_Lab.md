@@ -54,8 +54,48 @@ To calculate *F*<sub>*ST*</sub>*s* between Japan and the Philippines using vcfto
 enable_lmod
 module load vcftools/0.1
 ```
+Before you can calculate *F*<sub>*ST*</sub>*s* between population pairs, you will need to create population files for the Philippines and Indonesia populations, just as you did for the Japanese population on Tuesday.
 
-Type (all on one line)
+Type
+
+``` bash
+nano P_individuals.txt
+```
+
+Then type
+
+``` bash
+P1
+P10
+P14
+P16
+P18
+P20
+P22
+P24
+P3
+P6
+```
+
+Exit out of nano when you have finished. Type
+
+``` bash
+nano N_individuals.txt
+```
+
+And type
+
+``` bash
+N1
+N2
+N3
+N4
+N5
+N6
+N7
+```
+
+Now, type (all on one line)
 
 ``` bash
 vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --exclude-positions /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt --weir-fst-pop J_individuals.txt --weir-fst-pop P_individuals.txt --out FST_J-P
