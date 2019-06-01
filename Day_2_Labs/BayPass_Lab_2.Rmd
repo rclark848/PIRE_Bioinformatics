@@ -92,7 +92,7 @@ Type the following commands to create your histogram
 ```{r, eval=FALSE}
 require(data.table)
 data <- fread("all_BFs.txt")
-BFs_SSTmean <- data$"SST Mean"
+BFs_SSTMean <- data$SST_Mean
 pdf(width=4, height=4, file="SSTmean_histogram.pdf")
 hist(BFs_SSTMean)
 dev.off()
