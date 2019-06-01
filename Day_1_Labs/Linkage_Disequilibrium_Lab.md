@@ -1,7 +1,7 @@
-Linkage Disequilibrium (LD)
+Hardy-Weinberg Proportions & Linkage Disequilibrium (LD)
 ================
 
-First, we are going to pick up where we left off this morning thinking about expected heterozygosity, observed heterozygosity, and Hardy-Weinberg proportions (HWP).Remember that departure from HWP can indicate non-random mating, strong selection acting on a locus, or other evolutionary forces at play.
+First, we are going to pick up where we left off this morning thinking about expected heterozygosity, observed heterozygosity, and Hardy-Weinberg proportions (HWP). Remember that departure from HWP can indicate non-random mating, strong selection acting on a locus, or other evolutionary forces at play.
 \
 \
 Look back to the first secion of the heterozygosity lab, where we calculated the frequencies for allele 1 and allele 2, *H*<sub>*e*</sub> and *H*<sub>*o*</sub> by hand. Write these values down below
