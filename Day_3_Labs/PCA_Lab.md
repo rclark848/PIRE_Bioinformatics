@@ -61,7 +61,7 @@ module load plink
 Then type (all on the same line)
 
 ``` bash
-plink2 --pca var-wts vcols=chrom,pos,maj,nonmaj --bad-freqs --allow-extra-chr --vcf clownfish_nooutliers.recode.vcf
+plink2 --pca var-wts vcols=chrom,pos,maj,nonmaj --bad-freqs --allow-extra-chr --vcf clownfish_nooutliers.recode.vcf --out nooutliers
 ```
 
 Arguments we used:
@@ -85,17 +85,17 @@ You'll also notice that plink wrote a few things to the screen. One line says ho
 The output file that we are especially interested in is the one with the extension `.eigenvec`. This file contains each individual's loadings on each of the principal components, and it is these loadings that we will plot to visualize the data.
 \
 \
-In addition, we will also look at the `plink2.eigenvec.var` file. It tells us how much each SNP contributes to each principal component.
+In addition, we will also look at the `nooutliers.eigenvec.var` file. It tells us how much each SNP contributes to each principal component.
 
 ***Download data output***
 --------------------------
 
-Use WinSCP on your Desktop to download the `plink2.eigenvec` and `plink2.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine).
+Use WinSCP on your Desktop to download the `nooutliers.eigenvec` and `nooutliers.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine).
 
 ***Make a PCA plot***
 ---------------------
 
-Open Microsoft Excel and import the `plink2.eigenvec` file into Excel. You may have to tell Excel to show you `any file` (not just those ending in .txt, .csv, or .xlsx). It will ask you how you want to import the file. Use `Delimited` and make sure `Space` is checked so that it will create a column break when it finds a space.
+Open Microsoft Excel and import the `nooutliers.eigenvec` file into Excel. You may have to tell Excel to show you `any file` (not just those ending in .txt, .csv, or .xlsx). It will ask you how you want to import the file. Use `Delimited` and make sure `Space` is checked so that it will create a column break when it finds a space.
 \
 \
 The file should now display as a series of columns:
@@ -153,7 +153,7 @@ Don't exit out of Excel yet.
 Now we'll understand which SNPs are important for driving the patterns in the PCA plot. The importance is stated in terms of "loadings," which reflect the degree to which the allele at each SNP affects the position of an individual along a PC axis.
 \
 \
-Open `plink2.eigenvec.var` from within Excel.
+Open `nooutliers.eigenvec.var` from within Excel.
 \
 \
 Each line is a SNP in our dataset. The columns are:
