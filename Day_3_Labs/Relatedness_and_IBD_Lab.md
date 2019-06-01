@@ -76,7 +76,7 @@ R
 We will read in a matrix of geographic distances (in km) between each sample that I calculated earlier. Type:
 
 ``` r
-dists <- read.csv("cm/shared/courses/Bioinfo_Workshop/clownfish_data/dists.csv")
+dists <- read.csv("/cm/shared/courses/Bioinfo_Workshop/clownfish_data/dists.csv")
 ```
 
 To see the last few lines of what you read in, type:
