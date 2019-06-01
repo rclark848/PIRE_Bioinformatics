@@ -1,25 +1,167 @@
 Linkage Disequilibrium (LD)
 ================
 
-Linkage disequilibrium (also called gametic disequilibrium) is the non-random association of alleles at two different loci. For example, imagine two loci. One has alleles A and T and the other has C and G. These two loci would be in strong linkage disequilibrium if A always appears with C, and T always appears with G. We generally find stronger linkage between loci that are physically close to each other on a chromosome or in regions of a chromsome with less recombination, and between loci on which selection is acting jointly.
+First, we are going to pick up where we left off this morning thinking about expected heterozygosity, observed heterozygosity, and Hardy-Weinberg proportions (HWP).Remember that departure from HWP can indicate non-random mating, strong selection acting on a locus, or other evolutionary forces at play.
+\
+\
+Look back to the first secion of the heterozygosity lab, where we calculated the frequencies for allele 1 and allele 2, *H*<sub>*e*</sub> and *H*<sub>*o*</sub> by hand. Write these values down below
+\
+\
+*Frequency of allele 1*: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+*Frequency of allele 2*: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+_*H*<sub>*e*</sub>_: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+_*H*<sub>*o*</sub>_: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+Open up the Excel file from the previous lab if you closed it out earlier.
 
-***Calculating LD***
---------------------
+***HWP by hand***
+-----------------
 
-First, log in to Turing, navigate to your workspace, and get a node to work on:
+Let's go further than judgment and see if we can construct a test for this one locus. Let's divide the samples into three genotypes: the *homozygotes* for allele 1 (the 1,1 individuals), the homozygotes for allele 2 (the 2,2 individuals) and the *heterozygotes* (the 1,2 individuals). Note that our locus has 2 alleles.
+\
+\
+If we have Hardy-Weinberg proportions, we expect the number of homozygotes from allele 1 and allele 2 to be
+\
+\
+*E*[*Homozygotes*<sub>1</sub>]=*Np*<sub>1</sub><sup>2</sup> = 8*p*<sub>1</sub><sup>2</sup> = *E*<sub>1</sub>
+\
+\
+*E*[*Homozygotes*<sub>2</sub>]=*Np*<sub>2</sub><sup>2</sup> = 8*p*<sub>2</sub><sup>2</sup> = *E*<sub>2</sub>
+\
+\
+where *N* is the number of individuals and the *p*<sub>*k*</sub>s are the allele frequencies of each allele. Similarly, we expect the number of heterozygotes to be everything else, which we can calculate as
+\
+\
+*E*[*Heterozygotes*]=*N*(1-*sum*[*p*<sub>*k*</sub><sup>2</sup>]) = 8(1 - *p*<sub>1</sub><sup>2</sup> - *p*<sub>2</sub><sup>2</sup>) = *E*<sub>3</sub>
+\
+\
+Calculate the *E*[*Hom*<sub>1</sub>\], *E*[*Hom*<sub>2</sub>\] and *E[Het]* calculations using the allele frequencies you recorded above
+\
+\
+*E*[*Hom*<sub>1</sub>\]=*E*<sub>1</sub>= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+*E*[*Hom*<sub>2</sub>\]=*E*<sub>2</sub>= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+*E*[*Het*\]=*E*<sub>3</sub>= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+The observed numbers of homozygotes and heterozygotes can be found by counting them up in your file. What are they?
+\
+\
+*O*[*Hom*<sub>1</sub>\]=*O*<sub>1</sub>= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+*O*[*Hom*<sub>2</sub>\]=*O*<sub>2</sub>= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+*O*[*Het*\]=*O*<sub>3</sub>= \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\
+\
+To test whether the observed values (*O*<sub>1</sub>, *O*<sub>2</sub>, and *O*<sub>3</sub>) match the values expected under HWP (*E*<sub>1</sub>, *E*<sub>2</sub>, and *E*<sub>3</sub>), we used a chi-squared (*X*<sup>2</sup>) test. The traditional *X*<sup>2</sup> test takes the form
+\
+\
+*X*<sup>2</sup> = *sum*[(*O*<sub>*j*</sub> - *E*<sub>*j*</sub>)<sup>2</sup>/*E*<sub>*j*</sub>] = (*O*<sub>1</sub> - *E*<sub>1</sub>)<sup>2</sup>/*E*<sub>1</sub> + (*O*<sub>2</sub> - *E*<sub>2</sub>)<sup>2</sup>/*E*<sub>2</sub> + (*O*<sub>3</sub> - *E*<sub>3</sub>)<sup>2</sup>/*E*<sub>3</sub>
+\
+\
+Let's calculate that value from the data.
+\
+\
+*What is your *X*<sup>2</sup> value? Show your work.*
+\
+\
+\
+\
+We can compare this answer against a *X*<sup>2</sup>-table to determine statistical significance. With three classes (two homozygote classes and one heterozygote class), we have one degree of freedom (DF). For a *X*<sup>2</sup> with one DF, we have a critical value of 3.84. This critical value means that a value in excess of 3.84 has only a five percent (5%) chance of occurring under the null hypothesis of HWP. We typically say that we reject the null hypothesis of HWP if *X*<sup>2</sup> &gt; 3.84.
+\
+\
+*How large is your answer, compared with the critical value of 3.84? Can we reject the null hypothesis of HWP?*
+\
+\
+\
+\
+When you are done, go ahead and exit out of Excel.
+
+***HWP with vcftools***
+-----------------------
+
+We are now going to check for HWP in our clownfish populations using vcftools. This calculation will give us a test for whether each locus in each population is in HWP.
+\
+\
+Open up PuTTY and log on to your Turing account. Type
 
 ``` bash
 salloc -c 12
 bash -l
 ```
 
-vcftools conveniently calculates *r*<sup>2</sup> (a measure of LD) between pairs of loci for us. To do this type
+We only want to calculate HWP within each population. Today, we are going to continue to focus on the Japanese population.
+\
+\
+To get ready, navigate to your workspace if you're not already there
+
+``` bash
+cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
+```
+To calculate HWP using vcftools, type the following
 
 ``` bash
 module load vcftools/0.1
+
+vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --hardy --keep J_individuals.txt --out hardy_J
 ```
 
-Then type (all on one line)
+Arguments we used:
+
+-   **--vcf** -------- read in data from a VCF file
+-   **--hardy** ------ calculate a p-value for each locus from HWP test
+-   **--keep** ------- name of the text file with individuals to include in analysis
+-   **--out** -------- name of the output file
+
+Open the `hardy_J.hwe` output file. Each line in the file corresponds to a locus. This file has columns in the following order:
+
+-   Chromosome ID
+-   SNP bp position
+-   Number of observed homozygotes and heterozygotes at the given locus
+-   Number of expected homozygotes and heterozygotes at the given locus
+-   *X*<sup>2</sup>-value
+-   p-value for HWP test (null hypothesis is that the population is in HWP at given locus)
+-   p-value for heterozygosity deficit
+-   p-value for heterozygosity excess
+
+*Scroll up and down the file. Which loci do you see that might be out of HWP in the Japanese population?*
+\
+\
+\
+\
+*A locus can be out of HWP due to either a heterozygote excess or a deficit. What processes could cause either a heterozygosity excess or deficit to occur in a population?*
+\
+\
+\
+\
+*What process could cause one locus to be out of HWP in several populations?*
+\
+\
+\
+\
+\
+\
+Exit out of `hardy_J.hwe` when you are done.
+
+## *__Calculating LD__*
+
+\
+Linkage disequilibrium (also called gametic disequilibrium) is the non-random association of alleles at two different loci. For example, imagine two loci. One has alleles A and T and the other has C and G. These two loci would be in strong linkage disequilibrium if A always appears with C, and T always appears with G. We generally find stronger linkage between loci that are physically close to each other on a chromosome or in regions of a chromsome with less recombination, and between loci on which selection is acting jointly.
+
+vcftools conveniently calculates *r*<sup>2</sup> (a measure of LD) between pairs of loci for us. To do this type (all on one line)
 
 ``` bash
 vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --geno-r2 --ld-window-bp 5000 --keep J_individuals.txt --out ld_J
@@ -60,17 +202,6 @@ n
 ```
 
 *Please find five (5) pairs of loci with *r*<sup>2</sup> &gt; 0.8 and list them here. (Please list both contig name and position of the SNPs.)*
-\
-\
-\
-\
-You can put together another reasonably complex search to look for a tab (\t) followed by a one (1), followed by an end of line character ($). This works because *r*<sup>2</sup> is at the right-hand side of each line:
-
-``` bash
-/\t1$
-```
-
-*Can you find any pairs of loci with *r*<sup>2</sup> = 1 that are more than 1000 bp apart? If so, list the pairs here. (Please list both contig name and position of the SNPs.)*
 \
 \
 \
