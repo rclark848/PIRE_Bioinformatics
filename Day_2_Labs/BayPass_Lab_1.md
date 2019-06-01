@@ -94,13 +94,13 @@ When you are finished, exit out of nano.
 To create our correctly formatted BayPass input file using PGDSpider, we will use a batch script. First, you need to copy this script to your workspace. Type the following (all on one line)
 
 ``` bash
-cp /cm/shared/courses/Bioinfo_Workshop/clownfish_data/PGDSpider_Script.sbatch /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace
+cp /cm/shared/courses/Bioinfo_Workshop/clownfish_data/PGDSpider_Script.slurm /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace
 ```
 
 Once you've done that, open up the script to take a look at what we will be calling
 
 ``` bash
-less PGDSpider_Script.sbatch
+less PGDSpider_Script.slurm
 ```
 
 You can see the command for PGDSpider is very long, so we wrote a script to simplify the process.
@@ -109,7 +109,7 @@ You can see the command for PGDSpider is very long, so we wrote a script to simp
 When you are done looking at the script, close out of it. Run PGDSpider by typing
 
 ``` bash
-sbatch PGDSpider_Script.sbatch
+sbatch PGDSpider_Script.slurm
 ```
 
 The program should only take ~1 minute to run. Type `ls -ltrh` to check and see that it's running properly. If it worked, you should see an output file titled `output_BayPass.snps` appear.
