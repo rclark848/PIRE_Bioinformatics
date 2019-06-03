@@ -127,7 +127,7 @@ Today, we only want to calculate linkage disequilibrium for individuals from the
 nano J_individuals.txt
 ```
 \
-The text file is super simple : it just needs to have the names of all the individuals that we want to group together in a population. The names need to match what is in the .vcf file. Therefore, enter the following information (make sure to put each individual ID on a separate line):
+The text file is super simple: it just needs to have the names of all the individuals that we want to group together in a population. The names need to match what is in the .vcf file. Therefore, enter the following information (make sure to put each individual ID on a separate line):
 ```{bash, eval=FALSE}
 J3
 J5
