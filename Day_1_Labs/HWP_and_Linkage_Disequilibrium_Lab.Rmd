@@ -88,57 +88,6 @@ We can compare this answer against a $X^2$-table to determine statistical signif
 \
 \
 \
-When you are done, go ahead and exit out of Excel.
-
-## *__HWP with vcftools__*
-\
-We are now going to check for HWP in our clownfish populations using vcftools. This calculation will give us a test for whether each locus in each population is in HWP.
-\
-\
-Open up PuTTY and log on to your Turing account. Type
-```{bash, eval=FALSE}
-salloc -c 12
-bash -l
-```
-\
-We only want to calculate HWP within each population. Today, we are going to continue to focus on the Japanese population.
-\
-\
-To get ready, navigate to your workspace if you're not already there
-```{bash, eval=FALSE}
-cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
-```
-\
-To calculate HWP using vcftools, type the following
-```{bash, eval=FALSE}
-module load vcftools/0.1
-
-vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --hardy --keep J_individuals.txt --out hardy_J
-```
-\
-Arguments we used:
-
-* **--vcf** -------- read in data from a VCF file
-* **--hardy** ------ calculate a p-value for each locus from HWP test
-* **--keep** ------- name of the text file with individuals to include in analysis
-* **--out** -------- name of the output file
-\
-Open the `hardy_J.hwe` output file. Each line in the file corresponds to a locus. This file has columns in the following order:
-
-* Chromosome ID
-* SNP bp position
-* Number of observed homozygotes and heterozygotes at the given locus
-* Number of expected homozygotes and heterozygotes at the given locus
-* $X^2$-value
-* p-value for HWP test (null hypothesis is that the population is in HWP at given locus)
-* p-value for heterozygosity deficit
-* p-value for heterozygosity excess
-\
-*Scroll up and down the file. Which loci do you see that might be out of HWP in the Japanese population?*
-\
-\
-\
-\
 *A locus can be out of HWP due to either a heterozygote excess or a deficit. What processes could cause either a heterozygosity excess or deficit to occur in a population?*
 \
 \
@@ -153,7 +102,7 @@ Open the `hardy_J.hwe` output file. Each line in the file corresponds to a locus
 \
 \
 \
-Exit out of `hardy_J.hwe` when you are done.
+Exit out of Excel when you are done.
 
 ## *__Calculating LD__*
 
@@ -161,7 +110,43 @@ Exit out of `hardy_J.hwe` when you are done.
 Linkage disequilibrium (also called gametic disequilibrium) is the non-random association of alleles at two different loci. For example, imagine two loci. One has alleles A and T and the other has C and G. These two loci would be in strong linkage disequilibrium if A always appears with C, and T always appears with G. We generally find stronger linkage between loci that are physically close to each other on a chromosome or in regions of a chromsome with less recombination, and between loci on which selection is acting jointly.
 \
 \
+Open up PuTTY and log on to your Turing account. Type
+```{bash, eval=FALSE}
+salloc -c 12
+bash -l
+```
+\
+\
+Then navigate to your workspace
+```{bash, eval=FALSE}
+cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
+```
+\
+Today, we only want to calculate linkage disequilibrium for individuals from the Japanese population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude. Create a new file by typing
+```{bash, eval=FALSE}
+nano J_individuals.txt
+```
+\
+The text file is super simple : it just needs to have the names of all the individuals that we want to group together in a population. The names need to match what is in the .vcf file. Therefore, enter the following information (make sure to put each individual ID on a separate line):
+```{bash, eval=FALSE}
+J3
+J5
+J9
+J11
+J13
+J15
+J17
+J19
+```
+\
+To exit nano, look at the bottom of the screen. You will see that it says `^X` for Exit. This means `Control X`. Type that, then follow the instructions to save the file as `J_individuals.txt`.
+
 vcftools conveniently calculates $r^2$ (a measure of LD) between pairs of loci for us. To do this type (all on one line)
+```{bash, eval=FALSE}
+module load vcftools/0.1
+```
+
+
 ```{bash, eval=FALSE}
 vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --geno-r2 --ld-window-bp 5000 --keep J_individuals.txt --out ld_J
 ```
