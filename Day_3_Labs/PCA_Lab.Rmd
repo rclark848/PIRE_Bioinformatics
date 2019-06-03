@@ -32,7 +32,7 @@ module load vcftools/0.1
 \
 Type (all on one line)
 ```{bash, eval=FALSE}
-vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --exclude-positions /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt --recode --out clownfish_nooutliers
+vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --exclude-positions /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt --recode --recode-INFO-all --out clownfish_nooutliers
 ```
 \
 Arguments we used:
@@ -190,7 +190,7 @@ Switch back to Turing when you are done.
 \
 If you have time, repeat the PCA analysis, but trim only to the outliers for your input file to plink. Type (all on one line):
 ```{bash, eval=FALSE}
-vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --positions /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt --recode --out clownfish_outliersonly
+vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --positions /cm/shared/courses/Bioinfo_Workshop/clownfish_data/outlier_candnames.txt --recode --recode-INFO-all --out clownfish_outliersonly
 ```
 \
 This will create a file called `clownfish_outliersonly.recode.vcf` that you can use as input to plink.
