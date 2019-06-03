@@ -104,144 +104,11 @@ The third line of the file begins the genotype data. Column 1 has the individual
 \
 Exit out of Excel when you are done.
 
-***Heterozygosity with vcftools***
-----------------------------------
-
-Heterozygosity can be calculated in two different ways:
-
-1.  ***Heterozygosity per locus:*** Expected (or observed) proportion of heterozygous individuals at a locus in a population
-2.  ***Heterozygosity per individual:*** Expected (or observed) proportion of heterozygous loci in an individual
-
-When we did our heterozygosity calculations by hand, we measured heterozygosity on a per locus basis. Let's try calculating heterozygosity per individual using **vcftools**.
-\
-\
-Open up PuTTY and log on to your Turing account. Type
-
-``` bash
-salloc -c 12
-bash -l
-```
-
-For the labs today (and the rest of the week) we will be working with a VCF file that contains genotype information for clownfish from three different populations (Japan, Philippines, and Indonesia). Open up the VCF file by typing (all on one line)
-
-``` bash
-less -S /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf
-```
-
-To skip the header and get to the data part of the file, search for the word `CHROM` by typing
-
-``` bash
-/CHROM
-```
-
-and hitting `enter`. `CHROM` is useful because it's a word in the header of the data section.
-\
-\
-The header line starts with `#CHROM` and has the following columns:
-
--   **CHROM** ------------ the name of the "chromosome" or contig in our case
--   **POS** -------------- the basepair position of the SNP on the contig
--   **ID** --------------- a name for this variant (left as ".")
--   **REF** -------------- the reference allele at this position
--   **ALT** -------------- the alternate allele at this position
--   **QUAL** ------------- phred-scaled quality score for if this position is a SNP
--   **FILTER** ----------- indicates if a SNP passed filters
--   **INFO** ------------- lots of information about the SNP
--   **FORMAT** ----------- defines the order of dat in the genotype columns. GT:AD:DP:GQ:PL means genotype (0 for reference, 1 for alternate), depths of reads for each allele, total depth of reads, Phred score, Phred-scaled genotype likelihoods
--   **Name of samples** -- each of these columns is for the individual given in the header
-
-The sample names are coded so that J represents Japan, P represents Philippines, and N represents individuals from Indonesia.
-\
-\
-To quit from the less program, type
-
-``` bash
-q
-```
-
-Now navigate to your workspace if you're not there already
-
-``` bash
-cd /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/
-```
-
-Today, we only want to calculate the heterozygosity of individuals from the Japanese population. To do so, we need to create a text file that specifies which individuals to keep and which to exclude. Create a new text file by typing
-
-``` bash
-nano J_individuals.txt
-```
-
-The text file is super simple: it just needs to have the names of all the individuals that we want to group together in a population. The names need to match what is in the .vcf file. Therefore, enter the following information (make sure to put each individual ID on a separate line):
-
-``` bash
-J3
-J5
-J9
-J11
-J13
-J15
-J17
-J19
-```
-
-To exit nano, look at the bottom of the screen. You will see that it says `^X` for Exit. This means `Control X`. Type that, then follow the instructions to save the file as `J_individuals.txt`.
-\
-\
-To calculate heterozygosity using vcftools, we need to load the program first. Type the following (all on one line):
-
-``` bash
-module load vcftools/0.1
-```
-
-Now we can run vcftools. Type (all on one line)
-
-``` bash
-vcftools --vcf /cm/shared/courses/Bioinfo_Workshop/clownfish_data/output.hicov2.snps.only.vcf --het --keep J_individuals.txt --out het_J
-```
-
-Arguments we used:
-
--   **--vcf** --- read in data from a VCF file
--   **--het** --- calculate heterozygosity (really homozygosity) per individual
--   **--keep** -- specify name of text file with individuals to include
--   **--out** --- specify name of output file
-
-Open the `het_J.het` ouput file by typing
-
-``` bash
-less het_J.het
-```
-
-Each line in the file corresponds to an individual. This file has columns in the following order:
-
--   Individual ID
--   Number of homozygous loci (observed)
--   Number of homozygous loci (expected)
--   Number of loci that were included in the analysis
--   Fixation index (inbreeding coefficient -- defined in the section below)
-
-As you can tell, vcftools calculates homozygosity instead of heterozygosity.
-\
-\
-*Calculate the expected (*H*<sub>*e*</sub>) and observed (*H*<sub>*o*</sub>) \# of heterozygous loci for individual J19.*
-\
-(Hint: To calculate *H*<sub>*o*</sub>, simply subtract O(Hom) from the total number of loci included in the analysis. To calculate *H*<sub>*e*</sub>, subtract E(Hom) from the total number of loci.)
-\
-\
-\
-\
-*How do *H*<sub>*o*</sub> and *H*<sub>*e*</sub> in J19 compare to the values in other individuals in the population?*
-\
-\
-\
-\
-Exit out of the `het_J.het` file when finished.
-
 ***Understanding the inbreeding coefficient***
 ----------------------------------------------
 
 \
-vcftools also calculates a metric denoted as *F*<sub>*IS*</sub>, otherwise known as the inbreeding coefficient. This can be thought of as the probability that two alleles at a given locus are identical by descent (inherited from same ancestor). It also represents the mean *reduction* in the *heterozygosity* of an individual due to inbreeding, or non-random mating within a subpopulation. Its value can range from -1 to 1, with 1 indicating a complete reduction in heterozygosity (all individuals are homozygous at a given locus).
+We can also calculate a metric denoted as *F*<sub>*IS*</sub>, otherwise known as the inbreeding coefficient. This can be thought of as the probability that two alleles at a given locus are identical by descent (inherited from same ancestor). It also represents the mean *reduction* in the *heterozygosity* of an individual due to inbreeding, or non-random mating within a subpopulation. Its value can range from -1 to 1, with 1 indicating a complete reduction in heterozygosity (all individuals are homozygous at a given locus).
 \
 \
 We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individual by hand using the following formula:
@@ -254,20 +121,6 @@ We can estimate the inbreeding coefficient (*F*<sub>*IS*</sub>) for an individua
 \
 \
 *Using your previously calculated values of *H*<sub>*e*</sub> and *H*<sub>*o*</sub>, what is the inbreeding coefficient for individual J19? (Show your work.)*
-\
-\
-\
-\
-*Now look at the `het_J.het` file. Does your value match the results from vcftools? Why or why not?*
-\
-\
-\
-\
-\
-\
-*How does *F*<sub>*IS*</sub> for individual J19 compare to the *F*<sub>*IS*</sub> of other individuals in Japan?* *Is *F*<sub>*I*</sub> in Japan generally low or high? (Remember, *F*<sub>*IS*</sub> is capped between -1 and 1.)*
-\
-\
 \
 \
 \
