@@ -1,7 +1,9 @@
 Calculating Heterozygosity and Inbreeding Statistics
 ================
 
-Today we will explore how to calculate heterozygosity and other measures of genetic diversity. We will start by doing some calculations by hand, and then move to the computer cluster to see how we can use different programs to compute the calculations for us. If this material is review for you, please bear with us. We're starting simple so that everyone is on the same page.
+Today we will explore how to calculate heterozygosity and other measures of genetic diversity. We will start by doing some calculations by hand to get everyone familiar with the theory behind most of the analyses we will run in the future. If this material is review for you, please bear with us. We're starting simple so that everyone is on the same page.
+\
+\
 Remember there are two kinds of heterozygosity:
 
 -   **Observed heterozygosity (*H*<sub>*o*</sub>)** is the proportion of individuals that are heterozygous (have two different alleles) at a given locus
@@ -10,7 +12,7 @@ Remember there are two kinds of heterozygosity:
 *H*<sub>*e*</sub> = *H*<sub>*o*</sub> if a population meets Hardy-Weinberg Proportions (HWP).
 \
 \
-In this lab, we are going to calculate the allele frquencies, *H*<sub>*o*</sub> and *H*<sub>*e*</sub> at a particular locus in a sample population. As a quick reminder, the equation for these terms are as follows:
+In this lab, we are going to calculate the allele frequencies, *H*<sub>*o*</sub> and *H*<sub>*e*</sub> at a particular locus in a sample population. As a quick reminder, the equation for these terms are as follows:
 \
 \
 ***Allele frequencies*** can be calculated as: *(copies of given alleles)/(total number alleles in population)*
