@@ -290,7 +290,7 @@ Now use WinSCP to download the pdf that you just made to your local computer. Th
 /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/ld_decay.pdf
 ```
 
-!<img src="Plots/ld_decay.png">
+![](Plots/ld_decay.png)
 
 
 *Please describe how linkage between loci varies as a function of physical distance between them.*
