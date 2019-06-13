@@ -203,6 +203,7 @@ baypass -help
 \
 \
 **Post-burnin default: 5,000 iterations**
+\
 **Thinned samples default: 25 (record one iteration every 25 post-burnin iterations)**
 \
 \
