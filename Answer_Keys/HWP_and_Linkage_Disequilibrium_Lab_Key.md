@@ -45,10 +45,10 @@ where *N* is the number of individuals and the *p*<sub>*k*</sub>s are the allele
 Calculate the *E*\[*Hom*<sub>1</sub>\], *E*\[*Hom*<sub>2</sub>\] and *E\[Het\]* calculations using the allele frequencies you recorded above
 \
 \
-*E*\[*Hom*<sub>1</sub>\]=*E*<sub>1</sub>= ***N**p*<sub>1</sub><sup>2</sup> = 8 x 0.1875 x 0.1875 = 0.28125**
+*E*\[*Hom*<sub>1</sub>\]=*E*<sub>1</sub>= ***Np*<sub>1</sub><sup>2</sup> = 8 x 0.1875 x 0.1875 = 0.28125**
 \
 \
-*E*\[*Hom*<sub>2</sub>\]=*E*<sub>2</sub>= ***N**p*<sub>2</sub><sup>2</sup> = 8 x 0.8125 x 0.8125 = 5.28125**
+*E*\[*Hom*<sub>2</sub>\]=*E*<sub>2</sub>= ***Np*<sub>2</sub><sup>2</sup> = 8 x 0.8125 x 0.8125 = 5.28125**
 \
 \
 *E*\[*Het*\]=*E*<sub>3</sub>= ***N*(1 - *p*<sub>1</sub><sup>2</sup> - *p*<sub>2</sub><sup>2</sup>) = 8(1 - 0.035156 - 0.660156) = 8(0.304688) = 2.4375**
