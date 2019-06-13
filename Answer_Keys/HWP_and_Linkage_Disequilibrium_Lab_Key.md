@@ -290,9 +290,8 @@ Now use WinSCP to download the pdf that you just made to your local computer. Th
 /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/ld_decay.pdf
 ```
 
-![](HWP_and_Linkage_Disequilibrium_Lab_Key_files/figure-markdown_github/unnamed-chunk-23-1.png)
+!<img src="Plots/ld_decay.pdf">
 
-    ## NULL
 
 *Please describe how linkage between loci varies as a function of physical distance between them.*
 \
