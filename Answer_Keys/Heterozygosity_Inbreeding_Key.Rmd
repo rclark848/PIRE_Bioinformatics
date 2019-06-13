@@ -1,5 +1,5 @@
 ---
-title: "Calculating Heterozygosity and Inbreeding Statistics"
+title: "Calculating Heterozygosity and Inbreeding Statistics Key"
 output: 
   github_document: default
   html_notebook: default
@@ -35,60 +35,58 @@ Navigate to <https://github.com/rclark848/PIRE_Bioinformatics>. This is a reposi
 The first line of the data file shows you four things, each in a cell: 1) the number of loci, 2) the number of individuals, 3) the number of populations, and 4) the number of individuals in the first population. Enter this below:
 \
 \
-*Number of loci:*___________________________________________________
+*Number of loci:* **10**
 \
 \
-*Number of individuals:*____________________________________________
+*Number of individuals:* **25**
 \
 \
-*Number of populations:*____________________________________________
+*Number of populations:* **3**
 \
 \
-*Number of individuals in population #1:*___________________________
-\
+*Number of individuals in population #1:* **8**
 \
 The third line of the file begins the genotype data. Column 1 has the individual ID, column 2 has the population name, and columns 3 and 4 have the two alleles for each individual (these individuals are diploid) at a particular locus. The alleles are coded as 1 or 2 (e.g., these might represent A and T at a single nucleotide polymorphism).
 \
 \
 *What is the genotype of individual J19?*
 \
-\
-\
+**2,2**
 \
 *What is the allele frequency of allele #1?*
 \
 (Hint: Refer to the first page of the lab if you forget how to calculate allele frequencies. In Excel, simply click on a blank cell and type `=`. Then count the number of times allele 1 appears and type that after the `=`. Divide that by the total number of alleles in the population. Hit `enter`.)
 \
-\
+**Allele frequency of allele 1 = 3/16 = 0.1875** 
 \
 \
 *What is the allele frequency of allele #2?*
 \
-\
+**Allele frequency of allele 2 = 13/16 = 0.8125**
 \
 \
 *What is your expected heterozygosity ($H_{e}$)?*
 \
 (Hint: Refer to the first section of the lab if you forget how to calculate $H_{e}$. In Excel, simply click on a blank cell and type `=2`. Then multiply that two by the two allele frequencies you just calculated. Hit `enter`.)
 \
-\
+**$H_{e}$ = 2pq = 2 x 0.1875 x 0.1825 = 0.304688**
 \
 \
 *What is your observed heterozygosity ($H_{o}$)?*
 \
 (Hint: Refer to the first section of the lab if you forget how to calculate $H_{o}$. In Excel, simply click on a blank cell and type `=`. Then count the number of heterozygotes in the population and type that after the `=`. Divide that by the total number of individuals in the population. Hit `enter`.)
 \
-\
+**$H_{o}$ = 3/8 = 0.375**
 \
 \
 *How does the expected heterozygosity compare to the maximum possible heterozygosity for a biallelic locus?*
 \
-\
+**The maximum possible heterozygosity is 0.5 (2 x 0.5 x 0.5). Here, our $H_{e}$ is less than the maximum possible heterozygosity.**
 \
 \
 *What are the implications of a very low heterozygosity for an individual locus? Why?*
 \
-\
+**Very low heterozygosity can lead to reduced fitness. Lower heterozygosity also indicates higher homozygosity, which means deleterious recessive alleles are more likely to come together in homozygotes and be exposed to selective pressure.**
 \
 \
 \
@@ -97,7 +95,7 @@ The third line of the file begins the genotype data. Column 1 has the individual
 \
 *(Hint: $H_{e}$ is expected heterozygosity assuming population is at HWE.)*
 \
-\
+**$H_{o}$ and $H_{e}$ are close, but don't match exactly. Our results suggest a slight heterozygosity excess but this is likely due to sampling error and small sampling sizes, and probably not a statistically significant difference.** 
 \
 \
 \
@@ -116,14 +114,14 @@ $F = 1 - [H_{o}/H_{e}]$
 \
 *What do you think an $F_{IS}$ of 0 indicates?*
 \
-\
+**An $F_{IS}$ of 0 indicates that $H_{o}$ = $H_{e}$ and there is no heterozygosity deficit or excess. The population is at HWP, and is randomly mating (no inbreeding).**
 \
 \
 *Using your previously calculated values of $H_{e}$ and $H_{o}$, what is the inbreeding coefficient for individual J19? (Show your work.)*
 \
-\
-\
-\
+**F = 1 - ($H_{o}$/$H_{e}$) = 1 - (0.375/0.304688) = 1 - 1.23 = -0.23**
 \
 \
 *How does inbreeding affect long-term population fitness? Why?*
+\
+**Inbreeding reduces long-term population fitness because it results in an increase in homozygosity and the expression of deleterious recessive alleles. (One generation of random mating will correct this, however.)**
