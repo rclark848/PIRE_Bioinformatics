@@ -224,6 +224,7 @@ Go ahead and use the island model formula to calculate the number of migrant ind
 \
 **If N = 100, the migration rate is:**
 \
+\
 ***Nm* = 16.77**
 \
 ***m* = 16.77/*N***
