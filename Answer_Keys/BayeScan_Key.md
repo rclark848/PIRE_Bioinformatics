@@ -147,7 +147,7 @@ Now, use WinSCP to download these two files to your local computer
 /cm/shared/courses/Bioinfo_Workshop/Workspace/yourworkspace/bayes_input.pdf
 ```
 
-Open the `bayes_input.pdf` file. Each locus is a dot with its ID number nearby, and *F*<sub>*S**T*</sub> is plotted against the *l**o**g*<sub>10</sub> Q-value. *l**o**g*<sub>10</sub> of 0.05 (5%) is -1.3, and a vertical line is plotted here as a cutoff.
+Open the `bayes_input.pdf` file. Each locus is a dot with its ID number nearby, and *F*<sub>*ST*</sub> is plotted against the *log*<sub>10</sub> Q-value. *log*<sub>10</sub> of 0.05 (5%) is -1.3, and a vertical line is plotted here as a cutoff.
 
 <img src="Plots/bayes_input.png" />
 
