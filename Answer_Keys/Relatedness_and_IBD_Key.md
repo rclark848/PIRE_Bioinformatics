@@ -237,7 +237,7 @@ Download this plot (`fsts.pdf`) and look at it.
 *What evidence do you see for or against isolation-by-distance patterns at the population level?*
 \
 \
-**There appears to be a relationship between *F*<sub>*ST*</sub> and geographic distance. The populations separated by the largest geographic distance had the highest mean *F*<sub>*S**T*</sub>, while the populations that were geographically closest together had the lowest mean *F*<sub>*ST*</sub>.**
+**There appears to be a relationship between *F*<sub>*ST*</sub> and geographic distance. The populations separated by the largest geographic distance had the highest mean *F*<sub>*ST*</sub>, while the populations that were geographically closest together had the lowest mean *F*<sub>*ST*</sub>.**
 \
 \
 Finally, we'll run a statistical test for a relationship between *F*<sub>*ST*</sub> and geographic distance. Because our pairwise distance measures aren't independent, we can't use a linear regression. Instead, we use a Mantel test, which tests for correlations among matrices.
