@@ -120,32 +120,6 @@ If Excel is foreign to you, here's a short guide:
 
 If populations are significantly differentiated, then we expect to see clustering of individuals by their respective populations. This clustering will not necessarily occur on the first several principal components though, so you may want to create graphs of the first vs. third PCs, first vs. fourth, etc., to see the major patterns in the data.
 
-    ## Warning: package 'tidyverse' was built under R version 3.4.4
-
-    ## -- Attaching packages ----------------------------------------------------------------------------------------------------------- tidyverse 1.2.1 --
-
-    ## v ggplot2 3.1.0     v purrr   0.2.4
-    ## v tibble  1.4.1     v dplyr   0.7.4
-    ## v tidyr   0.7.2     v stringr 1.2.0
-    ## v readr   1.1.1     v forcats 0.3.0
-
-    ## Warning: package 'ggplot2' was built under R version 3.4.4
-
-    ## Warning: package 'forcats' was built under R version 3.4.4
-
-    ## -- Conflicts -------------------------------------------------------------------------------------------------------------- tidyverse_conflicts() --
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
-
-    ## Parsed with column specification:
-    ## cols(
-    ##   .default = col_double(),
-    ##   Location = col_character(),
-    ##   Individual = col_character()
-    ## )
-
-    ## See spec(...) for full column specifications.
-
 <img src="Plots/PCA_nooutliers.png" />
 
 *Do individuals within populations cluster together? Why do you think so (or not)?*
@@ -230,15 +204,6 @@ plink2 --pca var-wts vcols=chrom,pos,maj,nonmaj --bad-freqs --allow-extra-chr --
 
 Use WinSCP on your Desktop to download the `outliersonly.eigenvec` and `outliersonly.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine). Open the files up in Excel and create a PCA, just as you did before.
 
-    ## Parsed with column specification:
-    ## cols(
-    ##   .default = col_double(),
-    ##   Location = col_character(),
-    ##   Individual = col_character()
-    ## )
-
-    ## See spec(...) for full column specifications.
-
 <img src="Plots/PCA_outliersonly" />
 
 *How does the clustering of individuals along the PCA axes change as compared to the PCA you made with outliers?*
@@ -274,15 +239,6 @@ plink2 --pca var-wts vcols=chrom,pos,maj,nonmaj --bad-freqs --allow-extra-chr --
 ```
 
 Use WinSCP on your Desktop to download the `allsnps.eigenvec` and `allsnps.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine). Open the files up in Excel and create a PCA, just as you did before.
-
-    ## Parsed with column specification:
-    ## cols(
-    ##   .default = col_double(),
-    ##   Location = col_character(),
-    ##   Individual = col_character()
-    ## )
-
-    ## See spec(...) for full column specifications.
 
 <img src="Plots/PCA_all.png" />
 
