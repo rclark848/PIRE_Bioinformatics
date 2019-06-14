@@ -191,15 +191,26 @@ Go ahead and use the island model formula to calculate the number of migrant ind
 *How many migrants per generation (Nm) does this calculation suggest these populations receive? Does this seem reasonable?*
 \
 \
-***F*<sub>*ST*</sub> = 1/(4*Nm* + 1)              0.014689 = 1/(4*Nm* + 1)**
+***F*<sub>*ST*</sub> = 1/(4*Nm* + 1)**
 \
-***F*<sub>*ST*</sub>(4*Nm* + 1) = 1               0.014689(4*Nm* + 1) = 1**
+***F*<sub>*ST*</sub>(4*Nm* + 1) = 1**
 \
-**4*Nm* + 1 = 1/*F*<sub>*ST*</sub>                4*Nm* + 1 = 1/0.014689 = 68.078**
+**4*Nm* + 1 = 1/*F*<sub>*ST*</sub>**
 \
-**4*Nm* = 1/*F*<sub>*ST*</sub> - 1                4*Nm* = 68.078 - 1 = 67.078**
+**4*Nm* = 1/*F*<sub>*ST*</sub> - 1**
 \
-***Nm* = (1/*F*<sub>*ST*</sub> - 1)/4             *Nm* = 67.078/4 = 16.77 migrants/generation**
+***Nm* = (1/*F*<sub>*ST*</sub> - 1)/4**
+\
+\
+**0.014689 = 1/(4*Nm* + 1)**
+\
+**0.014689(4*Nm* + 1) = 1**
+\
+**4*Nm* + 1 = 1/0.014689 = 68.078**
+\
+**4*Nm* = 68.078 - 1 = 67.078**
+\
+***Nm* = 67.078/4 = 16.77 migrants/generation**
 \
 \
 **This doesn't seem reasonable given the geographic distance between populations.**
@@ -213,9 +224,14 @@ Go ahead and use the island model formula to calculate the number of migrant ind
 \
 **If N = 100, the migration rate is:**
 \
-***Nm* = 16.77        100*m* = 16.77**
+***Nm* = 16.77**
 \
-***m* = 16.77/*N*     *m* = 16.77/100 = 0.1677 migrants**
+***m* = 16.77/*N***
+\
+\
+**100*m* = 16.77**
+\
+***m* = 16.77/100 = 0.1677 migrants**
 \
 \
 **This means that 0.1677% of each subpopulation migrates each generation.**
