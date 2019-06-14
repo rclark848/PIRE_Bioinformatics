@@ -179,6 +179,7 @@ Check that this worked: you should see negative values for PC1 at the top, and p
 \
 **TRINITY\_DN38287\_c0\_g1\_i1, 721**
 \
+\
 **4 out of the 5 SNPs are on contig TRINITY\_DN30917\_c0\_g1\_i1**
 \
 \
@@ -204,7 +205,7 @@ plink2 --pca var-wts vcols=chrom,pos,maj,nonmaj --bad-freqs --allow-extra-chr --
 
 Use WinSCP on your Desktop to download the `outliersonly.eigenvec` and `outliersonly.eigenvec.var` files to your local computer (saving to the desktop or in your Documents is fine). Open the files up in Excel and create a PCA, just as you did before.
 
-<img src="Plots/PCA_outliersonly" />
+<img src="Plots/PCA_outliersonly.png" />
 
 *How does the clustering of individuals along the PCA axes change as compared to the PCA you made with outliers?*
 \
