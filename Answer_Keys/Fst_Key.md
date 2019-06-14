@@ -191,7 +191,7 @@ Go ahead and use the island model formula to calculate the number of migrant ind
 *How many migrants per generation (Nm) does this calculation suggest these populations receive? Does this seem reasonable?*
 \
 \
-** *F*<sub>*ST*</sub> = 1/(4*Nm* + 1)**
+**F<sub>*ST*</sub> = 1/(4*Nm* + 1)**
 \
 ** *F*<sub>*ST*</sub>(4*Nm* + 1) = 1**
 \
